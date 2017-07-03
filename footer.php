@@ -4,29 +4,54 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package EmeraldJA
  */
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'emerald_ja' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'emerald_ja' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'emerald_ja' ), 'emerald_ja', '<a href="https://automattic.com/">Jennifer Ali</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+<!-- FOOTER
+=======================================================================-->
+
+<footer>
+
+     <nav id="footer-navbar" class="navbar navbar-inverse navbar-custom-2">
+
+        <div class="container">
+
+            <div class="row">
+
+                <p class="footer__copyright"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?> <?php the_author(); ?></p>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><span>|</span></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul><!-- .nav -->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li><a href="#"><span class="icon-google-plus"></span></a></li>
+                    <li><a href="#"><span class="icon-share-alt"></span></a></li>
+                </ul><!-- .navbar-right -->
+
+            </div><!-- .row -->
+
+        </div><!-- .container -->
+
+    </nav><!-- #footer-navbar -->
+
+    </div><!-- .container -->
+
+</footer>
+
 </div><!-- #page -->
+
+  <!--<script src="../node_modules/jquery/dist/jquery.js" charset="UTF-8" type="text/javascript"></script>
+  <script type="text/javascript" src="js/slick/slick.min.js"></script>
+  <script src="js/bootstrap.min.js" charset="UTF-8" type="text/javascript"></script>
+  <script src="../node_modules/lodash/lodash.js" charset="UTF-8" type="text/javascript"></script>-->
 
 <?php wp_footer(); ?>
 

@@ -45,6 +45,7 @@ function emerald_ja_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'emerald_ja' ),
+		'header-menu' => esc_html__( 'Header Menu', 'emerald_ja' ),
 	) );
 
 	/*
@@ -126,6 +127,12 @@ function emerald_ja_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/dist/js/slick/slick.min.js', array('jquery'), '', true );
+
+	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/dist/js/bootstrap.min.js', array('jquery'), '', true );
+	
+	wp_enqueue_script( 'app', get_template_directory_uri() . '/dist/js/app.js', array('jquery'), '1', true );
 }
 add_action( 'wp_enqueue_scripts', 'emerald_ja_scripts' );
 
@@ -153,3 +160,21 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+//------------ MY ADDTIONAL FUNCTIONS ---------------//
+
+// Register Custom Navigation Walker
+require get_template_directory() . '/wp-bootstrap-navwalker.php';
+
+// Header navigation
+function header_nav() {
+
+	wp_nav_menu( array(
+            'theme_location'    => 'header-menu',
+            'depth'             => 2,
+            'container'         => 'false',
+            'menu_class'        => 'nav navbar-nav navbar-right navbar-links--underline',
+            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+            'walker'            => new wp_bootstrap_navwalker())
+    );
+};
