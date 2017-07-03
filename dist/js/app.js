@@ -78,7 +78,9 @@ module.exports = __webpack_require__(1);
 //# Styles for Webpack Bundleling
 __webpack_require__(2);
 
-$(document).ready(function () {
+(function ($) {
+
+    console.log('yo yo my script works');
 
     //# Functionality
     __webpack_require__(3);
@@ -93,7 +95,7 @@ $(document).ready(function () {
 
     //# Carousel 
     __webpack_require__(8);
-});
+})(jQuery);
 
 /***/ }),
 /* 2 */
