@@ -26,9 +26,6 @@
 	<!-- Font Icons -->
     <link href="https://file.myfontastic.com/ncjQH3qL3iqtxPyrLNBQDo/icons.css" rel="stylesheet">
 	<!-- Google fonts -->
-
-	<!-- Slick Slider -->
-    <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
     
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

@@ -3,9 +3,10 @@
 require('../sass/styles.scss');
 
 
+(function($) {
 
-$(document).ready(function() {
-
+    console.log('yo yo my script works');
+	
     //# Functionality
     require('./codeSnippets.js');
 
@@ -20,4 +21,4 @@ $(document).ready(function() {
     //# Carousel 
     require('./carouselHandler.js');
 
-});
+})( jQuery );
