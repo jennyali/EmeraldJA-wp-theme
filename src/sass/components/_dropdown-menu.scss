@@ -1,0 +1,114 @@
+/*==================================
+
+        DROPDOWN MENUS
+
+====================================*/
+
+//      DROPDOWN FOR NAVBAR-CUSTOM-1 STYLE ONLY!       //
+
+//# Dropdown positioning when opened - inc animation
+.navbar-custom-1 li.open .dropdown-menu-custom--1 {
+    opacity: 1;
+        @include mediaQ-min($bp-sm) {
+            top: 75px;
+            opacity: 1;
+            transition: all 0.5s;
+        }
+}
+
+//# Aids the dropdowns animation so it appears to fade upwards
+.navbar-custom-1  li > .dropdown-menu-custom--1 {
+    top: 100px;
+    display: block;
+    opacity: 0;
+}
+
+//# Main styles for dropdown
+.dropdown-menu-custom--1 {
+    border: none;
+    background: $dark;
+    box-shadow: none;
+    border-radius: 0;
+    padding: $spacing-base;
+
+        li {
+            margin-bottom: $spacing-base;
+        }
+
+        &:before {
+            @include mediaQ-min($bp-sm) {
+                content: '';
+                position: absolute;
+                top: -7px;
+                left: 56px;
+                width: 0;
+                height: 0;
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid;
+                border-bottom-color: $dark;
+            }
+        }
+}
+
+//# change dropdown horizontal postion changes
+.navbar-right .dropdown-menu-custom--1 {
+    left: 0;
+    right: auto;
+}
+
+//# dropdown's text styling
+.navbar-links--underline .dropdown-menu-custom--1 li > a {
+    white-space: normal; 
+
+        @include mediaQ-min($bp-sm) {
+            white-space: nowrap;
+            color: $light;
+            letter-spacing: 0;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            transition: color 0.5s;
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+                &:hover:before {
+                    visibility: hidden;
+                    background-color: none;
+                }
+        }
+}
+
+//       on display version on Elements page.       //
+.dropdown-menu-custom--1.display {
+    position: relative;
+    top: 0;
+    display: block;
+    float: none;
+    width: 200px;
+
+        & li > a {
+            white-space: normal; 
+
+                @include mediaQ-min($bp-sm) {
+                    white-space: nowrap;
+                    color: $light;
+                    letter-spacing: 0;
+                    font-weight: bold;
+                    margin: 0;
+                    padding: 0;
+                    transition: color 0.5s;
+
+                        &:hover {
+                            color: $primary-color;
+                        }
+
+                        &:hover:before {
+                            visibility: hidden;
+                            background-color: none;
+                        }
+                }
+        }
+}

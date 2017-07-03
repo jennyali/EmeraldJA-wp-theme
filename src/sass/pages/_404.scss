@@ -1,0 +1,16 @@
+#error-page {
+
+    .page-title {
+        padding-bottom: $spacing-base * 4;
+    }
+
+    .page-caption {
+        padding: $spacing-base * 4 0;
+        border-top: 1px solid $light-grey;
+
+        form {
+            margin: $default-row-margin;
+        }
+    }
+
+}

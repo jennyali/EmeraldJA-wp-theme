@@ -1,0 +1,160 @@
+//#     General navbar style changes
+
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+    background: none;
+}
+
+
+//#     SITE HEADER NAVIGATION STYLE
+.navbar-custom-1 {
+    background-color: $light;
+
+    .navbar {
+        padding: ($spacing-base * 2) 0;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .navbar-default {
+        background: none;
+        border: none;
+    }
+
+    .navbar-brand {
+        font-size: $font-size-xlg;
+        letter-spacing: 5px;
+    }
+
+    .navbar-brand--thick-text {
+        font-weight: bold;
+        font-style: italic;
+        font-size: $font-size-xxxlg;
+        color: $primary-color;
+    }
+
+    .navbar-nav {
+        margin-top: $spacing-sm;
+        padding: $spacing-base 0;
+
+        a {
+            letter-spacing: 2px;
+            font-size: $font-size-sm;
+            font-family: Poppins, sans-serif;
+            padding: 0 0 $spacing-sm 0;
+            margin: 0 $spacing-base;
+        }
+    }
+
+    .navbar-brand, 
+    .navbar-nav a {
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .navbar,
+    .navbar-nav,
+    .navbar-brand,
+    .navbar-brand--thick-text {
+        transition: all 0.5s;
+    }
+
+    .navbar-default .navbar-nav > .open > a {
+        background: none;
+    }
+}
+
+
+//-----------------------------------------------------
+
+//#     SITE FOOTER NAVBAR
+.navbar-custom-2 {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+    text-align: center;
+
+        @include mediaQ-min($bp-sm) {
+            text-align: left;
+        }
+
+        .nav {
+            li {
+                padding: $spacing-base $spacing-base;
+
+                @include mediaQ-max($bp-sm) {
+                    display: inline-block;
+                }
+            }
+
+            a {
+                padding: 0;
+            }
+
+            a, 
+            li,
+            & > li > a {
+                color: $light;
+            }
+        }
+
+        .navbar-nav {
+            padding: 0;
+            margin: 0;
+        }
+
+}
+
+/*
+    ON :HOVER links have an 'underline' that grows 0 -> 100% in width.
+
+*/
+
+.navbar-links--underline {
+    li > a {
+        position: relative;
+        color: $dark;
+        text-decoration: none;
+    }
+
+    li > a:hover {
+        color: $dark;
+        background: none;
+    }
+
+    li > a:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $primary-color;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+    }
+
+    li > a:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+/* 
+    ON :HOVER changes the text color to theme primary color.
+*/
+
+.navbar-links--highlight {
+
+    .navbar-nav > li > a {
+        transition: color 0.2s ease-out;
+    }
+
+    .navbar-nav > li > a:hover {
+        color: $primary-color;
+    }
+}

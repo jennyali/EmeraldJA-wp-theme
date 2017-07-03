@@ -1,0 +1,21 @@
+.breadcrumbs-section {
+    background: $light-grey;
+}
+
+.breadcrumb {
+    background: none;
+    margin-bottom: 0;
+    padding: $spacing-lg $spacing-base;
+
+        a {
+            color: $dark;
+        }
+
+        li {
+            font-weight: 700;
+        }
+
+        li.active {
+            color: $primary-color;
+    }
+}

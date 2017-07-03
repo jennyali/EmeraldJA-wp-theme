@@ -1,0 +1,28 @@
+.pagination {
+
+    & > li > a,
+    & > li > span {
+        background: $primary-color;
+        border-color: $primary-color;
+        color: $light;
+        margin: 0 $spacing-sm $spacing-sm 0;
+        padding: $spacing-base $spacing-lg;
+        border-radius: $spacing-xs;
+        transition: all 0.5s;
+    }
+
+    & > .active > a, 
+    & > .active > a:hover, 
+    & > .active > a:focus, 
+    & > .active > span, 
+    & > .active > span:hover, 
+    & > .active > span:focus,
+    & > li > a:hover, 
+    & > li > a:focus, 
+    & > li > span:hover, 
+    & > li > span:focus {
+        background: $dark;
+        border-color: $dark;
+        color: $light;
+    }
+}

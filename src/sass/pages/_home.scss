@@ -1,0 +1,57 @@
+
+//# Home page sections have a general row padding thats large.
+
+.portfolio-section {
+
+    .navbar-custom-1 {
+        margin-bottom: ($spacing-base * 2);
+
+            @include mediaQ-max($bp-sm) {
+                margin-bottom: 0;
+
+                .navbar {
+                    padding: $spacing-lg $spacing-base;
+                }
+
+                .navbar-nav {
+                    width: 100%;
+                    margin: 0;
+                    text-align: center;
+                }
+
+                .nav > li {
+                    display: inline-block;
+                    margin-bottom: 15px;
+                }
+        }
+    }
+}
+
+.bio-excerpt-section {
+
+    .column {
+        @include mediaQ-min($bp-sm) {
+            padding: 0 ($spacing-base * 2);
+        }
+    }
+
+    img {
+
+        @include mediaQ-max($bp-sm) {
+            padding: 0;
+        }
+    }
+
+    .headline__divider {
+        margin-bottom: $spacing-base * 3;
+    }
+
+    h6 {
+        margin: $spacing-sm 0 ($spacing-base * 2);
+    }
+
+    p {
+        margin-bottom:  ($spacing-base * 2);
+    }
+
+}

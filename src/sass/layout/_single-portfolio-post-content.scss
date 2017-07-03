@@ -1,0 +1,25 @@
+.single-portflio-post__slider {
+
+    .carousel-control {
+        top: 50%;
+        background-image: none;
+    }
+}
+
+.single-portflio-post__content__figcaption {
+    margin: ($spacing-base * 2) 0;
+
+    h4 {
+        margin-bottom: $spacing-base;
+    }
+
+    ul li {
+        margin-bottom: $spacing-xs;
+        color: $mid-grey;
+    }
+
+    ul li span {
+        color: $dark;
+        padding-right: $spacing-sm;
+    }
+}

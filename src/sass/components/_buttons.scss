@@ -1,0 +1,123 @@
+// Custom 1 = bg : black & text : white, hover = light green bg & white text.
+
+.btn-custom-1 {
+    padding: $spacing-base ($spacing-base * 2);
+    background: $dark;
+    border-color: $dark;
+    font-weight: bold;
+    color: $light;
+    letter-spacing: 1.5px;
+    font-size: $font-size-base;
+    border-radius: 0;
+    transition: all 0.5s;
+
+        @include mediaQ-max($bp-sm) {
+           padding: $spacing-sm $spacing-lg;
+           font-size: $font-size-sm;
+        }
+
+        &:hover {
+            background: $primary-color;
+            border-color: $primary-color;
+            color: $light;
+        }
+}
+
+.btn-clear {
+    background: none;
+    border: none;
+    font-size: $font-size-md;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+//-----------------------------------------
+
+// Burger menu style
+
+//# curr.header-menu-btn
+
+.btn-custom-2 {
+    border-radius: 100%;
+    border: 2px solid $primary-color;
+    padding: 13px 10px;
+    
+    &.navbar-toggle {
+        border-color: $primary-color;
+    }
+}
+
+//---------------------------------------
+
+// Portfolio feature items, btn seen in overlay.
+
+.btn-custom-3 {
+    border: 1px solid $light;
+    border-radius: 100%;
+    padding: 6px 5px 3px 8px;
+    margin-left: 15px;
+    font-size: $font-size-base;
+    transition: all 0.25s;
+
+        &:hover {
+            border: 1px solid $dark;
+            color: $dark;
+            cursor: pointer;
+        }
+}
+
+.btn-custom-3--alt {
+    //padding: 8px 9px 4px 13px; // arrow icon
+    padding: 8px 12px 5px 12px;  // magnifying glass icon
+}
+
+//-----------------------------------------
+
+// Primary colored button with white text.
+
+.btn-custom-4 {
+    padding: $spacing-sm $spacing-lg;
+    background: $primary-color;
+    border-color: $primary-color;
+    font-weight: bold;
+    color: $light;
+    //letter-spacing: 1.5px;
+    //font-size: $font-size-base;
+    border-radius: 0;
+    transition: all 0.5s;
+    font-size: $font-size-sm;
+    letter-spacing: 1px;
+
+        @include mediaQ-max($bp-sm) {
+           padding: $spacing-sm $spacing-lg;
+           font-size: $font-size-sm;
+        }
+
+        &:hover {
+            background: $dark;
+            border-color: $dark;
+            color: $light;
+        }
+}
+
+
+//----------------------------------------
+
+// Button style for Slick Slider Arrow icons
+
+.btn-custom-5 {
+    background: $dark;
+    color: $light;
+    border: none;
+    border-radius: 100%;
+    font-size: 16px;
+    width: 58px;
+    height: 58px;
+    padding-top: 6px;
+    transition: background 0.5s;
+    outline: transparent;
+
+        &:hover {
+            background: $primary-color;
+        }
+}

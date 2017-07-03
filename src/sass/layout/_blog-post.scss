@@ -1,0 +1,71 @@
+.blog-post {
+    @extend %post;
+}
+
+.blog-post__meta {
+    @extend %post__meta;
+}
+
+.blog-post__thumbnail {
+    @extend %post__thumbnail;
+}
+
+.blog-post__categories {
+    @extend %blog-post__categories;
+}
+
+.blog-post__header {
+    @extend %post__header;
+}
+
+.blog-post__content {
+    @extend %post__content;
+}
+
+.blog-post__btn-row {
+    @extend %post__btn-row;
+}
+
+//# Single page Blog Post
+
+.single-blog-post {
+    border-bottom: 1px solid $light-grey;
+    
+        button {
+            margin-bottom: $spacing-base * 2;
+        }
+
+        p {
+            margin: $default-row-margin;
+        }
+
+        img {
+            margin-bottom: $spacing-base * 4;
+        }
+
+        .navbar-nav {
+            float: none;
+        }
+
+        .nav li {
+            display: inline-block;
+        }
+
+        .nav li a {
+            display: inline-block;
+            padding: $spacing-lg;
+            color: $primary-color;
+            transition: color 0.5s;
+
+                &:hover {
+                    color: $dark;
+                    background: none;
+            }
+        }
+
+        .nav li a:first-child {
+            @include mediaQ-min($bp-sm) {
+                padding-left: 0;
+        }
+    }
+}

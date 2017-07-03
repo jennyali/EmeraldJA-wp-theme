@@ -1,0 +1,28 @@
+
+.comment-body__holder {
+    position: relative;
+    margin: $spacing-base 0;
+    padding-right: $spacing-lg;
+}
+
+.comment-meta {
+
+    img {
+        float: left;
+        margin-right: $spacing-base;
+        margin-bottom: $spacing-base * 2;
+        max-width: 50px;
+
+            @include mediaQ-min($bp-sm) {
+                max-width: 100px;
+            }
+    }
+}
+
+.comment-reply {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: $font-size-xlg;
+    color: $primary-color;
+}

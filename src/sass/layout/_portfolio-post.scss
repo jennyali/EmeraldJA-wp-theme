@@ -1,0 +1,46 @@
+.portfolio-post {
+    @extend %post;
+}
+
+.portfolio-post__thumbnail {
+    position: relative;
+}
+
+.portfolio-post__categories {
+    @extend %blog-post__categories;
+    position: absolute;
+    top: 0;
+    margin: $spacing-xs;
+
+        button {
+            margin-right: $spacing-xs;
+    }
+}
+
+.portfolio-post__header {
+    @extend %post__header;
+}
+
+.portfolio-post__content {
+    @extend %post__content;
+    display: none;
+
+        @include mediaQ-min($bp-xs) {
+            display: block;
+        }
+}
+
+.portfolio-post__btn-row {
+    @extend %post__btn-row;
+}
+
+.portfolio-post__meta {
+    @extend %post__meta;
+    padding: 0; 
+}
+
+.portfolio-post__header h4,
+.portfolio-post__content p,
+.portfolio-post__meta {
+    margin: $portfolio-post-row-margin; 
+}

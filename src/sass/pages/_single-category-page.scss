@@ -1,0 +1,25 @@
+
+//# Title and Intro text at top of page.
+.category-caption {
+        p {
+            margin: $portfolio-post-row-margin;
+
+            @include mediaQ-min($bp-sm) {
+                column-count: 2;
+                column-gap: 50px;
+        }
+    }
+}
+
+.category-gallery {
+    margin: $portfolio-post-row-margin;
+}
+
+.category-gallery__item {
+    @extend .portfolio-item;
+    margin: ($spacing-base * 2) $spacing-base;
+}
+
+.category-gallery__item__overlay {
+    @extend .portfolio-item__overlay;
+}

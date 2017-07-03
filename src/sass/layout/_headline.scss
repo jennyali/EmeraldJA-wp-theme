@@ -1,0 +1,20 @@
+
+.headline {
+    @include mediaQ-max($bp-sm) {
+        text-align: center;
+    }
+}
+
+.headline__divider {
+    position: relative;
+    border-top: 1px solid $light-grey;
+
+
+    hr {
+        margin: 0;
+        border-top: 3px solid $dark;
+        width: 70px;
+        position: absolute;
+        top: -2px;
+    }
+}

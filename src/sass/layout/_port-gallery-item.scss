@@ -1,0 +1,19 @@
+.port-gallery__item {
+    margin: $portfolio-post-row-margin;
+
+}
+
+.port-gallery__item__thumbnail {
+    
+}
+
+.port-gallery__item__text {
+    h4 {
+        margin: $portfolio-post-row-margin; 
+    }
+
+    p {
+        padding: 0;
+        margin: $portfolio-post-row-margin;
+    }
+}

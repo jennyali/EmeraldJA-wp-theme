@@ -1,0 +1,7 @@
+.comments-list {
+    list-style: none;
+
+    @include mediaQ-max($bp-sm) {
+        padding: 0;
+    }
+}

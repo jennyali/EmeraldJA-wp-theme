@@ -1,0 +1,50 @@
+//# Button style for Slick Slider Arrow icons
+.icon-style-1 {
+    background: $dark;
+    color: $light;
+    border: none;
+    border-radius: 100%;
+    font-size: 16px;
+    width: 58px;
+    height: 58px;
+    padding-top: 6px;
+    transition: background 0.5s;
+    outline: transparent;
+    padding: 17px 15px;
+
+        &:hover {
+            background: $primary-color;
+        }   
+}
+
+//# Burger menu style
+.icon-style-2 {
+    border-radius: 100%;
+    border: 2px solid $primary-color;
+    padding: 17px 15px;
+    width: 58px;
+    height: 58px;
+    color: $dark-grey;
+    
+        &.navbar-toggle {
+            border-color: $primary-color;
+        }
+}
+
+//# Portfolio feature items, btn seen in overlay.
+.icon-style-3 {
+    border: 1px solid $light;
+    border-radius: 100%;
+    margin-left: 15px;
+    font-size: $font-size-base;
+    transition: all 0.25s;
+    padding: 17px 15px;
+    width: 58px;
+    height: 58px;
+
+        &:hover {
+            border: 1px solid $dark;
+            color: $dark;
+            cursor: pointer;
+        }  
+}

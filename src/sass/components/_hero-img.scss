@@ -1,0 +1,18 @@
+
+.hero-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-img__caption {
+    padding: 120px 30px 120px 15px;
+
+    p {
+        color: $light;
+        font-weight: 700;
+        font-size: $font-size-xlg;
+        line-height: 1.5;
+        margin: $default-row-margin;
+    }
+}

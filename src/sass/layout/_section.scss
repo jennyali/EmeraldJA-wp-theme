@@ -1,0 +1,27 @@
+//# padding to add space between sections.
+
+.features-section,
+.portfolio-section,
+.bio-excerpt-section,
+.contact-form-section,
+.contact-form__container,
+.about-content-section,
+.about-widget-section,
+.blog-post__reply-section,
+.blog-post__comments-section {
+
+
+    padding: $section-row-padding;
+
+        @include mediaQ-max($bp-sm) {
+            padding: $spacing-lg * 2 15px;
+        }
+}
+
+//# Light-grey background-color sections.
+
+.features-section,
+.bio-excerpt-section,
+.about-widget-section {
+    background-color: $light-grey;
+}

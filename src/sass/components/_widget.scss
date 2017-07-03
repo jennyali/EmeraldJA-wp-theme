@@ -1,0 +1,39 @@
+.widget {
+    padding: ($spacing-base * 4) 0;
+    border-bottom: 1px solid $light-grey;
+
+        @include mediaQ-max($bp-md) {
+            padding: ($spacing-base * 3) 0;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-weight: 500;
+
+            @include mediaQ-max($bp-md) {
+                font-size: $font-size-xxlg;
+            }
+        }
+
+        .form-control,
+        .input-group-btn > button {
+            padding: $spacing-base;
+            height: 50px;
+            color: $dark;
+            background: $light-grey;
+            border-radius: 0;
+            border: 1px solid $mid-grey;
+            box-shadow: none;
+        }
+
+        .form-control + .input-group-btn > button {
+            border-left: none;
+        }
+
+        .input-group .form-control:focus { 
+            z-index: 2;
+        }
+}
+.widget:first-child {
+    padding-top: 0;
+}

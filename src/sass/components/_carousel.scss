@@ -1,0 +1,87 @@
+/*---------------------------
+
+        CAROUSELS
+
+----------------------------*/
+
+
+
+.carousel {
+    
+    .carousel-inner > .item {
+        position: absolute;
+        display: block;
+        top: 0;
+        z-index: 3;
+    }
+
+    .item {
+        width: 100%;
+
+            img {
+                width: 100%;
+
+                    @include mediaQ-max($bp-sm) {
+                        position: relative;
+                        left: 50%;
+                        transform: translate(-50%);
+                        max-width: none;
+                        width: initial;
+                        height: 82vh;
+                    }
+            }
+
+            .item__caption__inner {
+                position: absolute;
+                top: 70%;
+                transform: translatey(-50%);
+                opacity: 0;
+
+                    @include mediaQ-max($bp-sm) {
+                        width: 100%;
+                        text-align: center;
+                        padding: $spacing-base 0;
+                    }
+            }
+    }
+
+    .item.active.first-load {
+        animation: none;
+
+            .item__caption__inner {
+                animation-name: carouselCaptionRaise;
+                animation-duration: 1s;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;
+            }
+    }
+
+    .item.active {
+        z-index: 10;
+        position: relative;
+        animation-name: fadeInItem;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+
+            .item__caption__inner {
+                top: 50%;
+                opacity: 1;
+                transition: all 1s 0.5s;
+            }
+    }
+
+    .carousel-indicators {
+
+        li {
+            background: $dark;
+            border-color: $dark;
+            margin: 0 $spacing-lg;
+        }
+
+        li.active {
+            background: $primary-color;
+            border-color: $primary-color;
+        }
+    }
+}

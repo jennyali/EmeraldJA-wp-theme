@@ -1,0 +1,46 @@
+/*
+    # DEFAULT MASONRY LAYOUT
+*/
+
+.masonry-layout {
+  column-count: 1;
+  column-gap: 0;
+
+    @include mediaQ-min($bp-xs) {
+      column-count: 2;
+
+      @include mediaQ-min($bp-sm) {
+        column-count: 3;
+      }
+    }
+}
+.masonry-layout__panel {
+  break-inside: avoid;
+  padding: $spacing-base;
+}
+.masonry-layout__panel-content {
+  //padding: 10px;
+  border-radius: 0;
+
+      @include mediaQ-max($bp-xs) {
+        padding: 0;
+    }
+}
+
+/*
+    # MASONRY LAYOUT - CUSTOMIZED FOR PORTFOLIO PAGE
+*/
+
+.masonry-layout--portfolio {
+    @include mediaQ-min($bp-xs) {
+      column-count: 1;
+
+        @include mediaQ-min($bp-sm) {
+          column-count: 2;
+
+          @include mediaQ-min($bp-md) {
+            column-count: 3;
+      }
+    }
+  }
+}
