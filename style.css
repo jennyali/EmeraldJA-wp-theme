@@ -6121,6 +6121,10 @@ a:link {
     transition: all 0.5s; }
   .navbar-custom-1 .navbar-default .navbar-nav > .open > a {
     background: none; }
+  .navbar-custom-1 .navbar-default .navbar-nav > .active > a,
+  .navbar-custom-1 .navbar-default .navbar-nav > .active > a:hover,
+  .navbar-custom-1 .navbar-default .navbar-nav > .active > a:focus {
+    background: none; }
 
 .navbar-custom-2 {
   margin-bottom: 0;

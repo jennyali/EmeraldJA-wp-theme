@@ -48,11 +48,6 @@
 
 </div><!-- #page -->
 
-  <!--<script src="../node_modules/jquery/dist/jquery.js" charset="UTF-8" type="text/javascript"></script>
-  <script type="text/javascript" src="js/slick/slick.min.js"></script>
-  <script src="js/bootstrap.min.js" charset="UTF-8" type="text/javascript"></script>
-  <script src="../node_modules/lodash/lodash.js" charset="UTF-8" type="text/javascript"></script>-->
-
 <?php wp_footer(); ?>
 
 </body>
