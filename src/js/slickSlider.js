@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 
 /*========================================
 
@@ -63,6 +65,8 @@ function changeSlickArrow(selector, classname) {
         .addClass(classname + ' btn-custom-5')
         .text('');
 }
+
+
 
 //changeSlickArrow('.slick-next', 'icon-arrow-40');
 //changeSlickArrow('.slick-prev', 'icon-arrow-39');
