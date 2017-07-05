@@ -288,28 +288,21 @@ get_header(); ?>
         </div><!-- .container -->
     </section><!-- .bio-excerpt-section -->
 
-    <!-- FRONT PAGE - TOP WIDGET AREA
-    =======================================================================-->
-
-    <?php dynamic_sidebar( 'fp-widget-area-top' ); ?>
 
     <!-- FRONT PAGE - PAGE CONTENT
     =======================================================================-->
-    <div class="wp-page-content" >
-        <?php if ( have_posts() ) {
 
-                while ( have_posts() ) {
-                    the_post();
-                    the_content(); 
-                }
+    <?php the_post(); ?>
+        
+        <article class="page-content">
+            
+            <?php the_content(); ?>
 
-        } ?> 
-    </div>
+        </article><!-- .page-content -->
 
     <!-- FRONT PAGE - BOTTOM WIDGET AREA
     =======================================================================-->
 
-    <?php dynamic_sidebar( 'fp-widget-area-bottom' ); ?>
 
 <!-- CONTENT END -->
 
