@@ -6487,35 +6487,45 @@ a:link {
   border-color: #222;
   color: #FFFFFF; }
 
-.widget {
-  padding: 60px 0;
-  border-bottom: 1px solid #f6f6f6; }
-  @media (max-width: 992px) {
-    .widget {
-      padding: 45px 0; } }
-  .widget h2 {
-    margin-top: 0;
-    font-weight: 500; }
-    @media (max-width: 992px) {
-      .widget h2 {
-        font-size: 32px; } }
-  .widget .form-control,
-  .widget .input-group-btn > button {
-    padding: 15px;
-    height: 50px;
-    color: #222;
-    background: #f6f6f6;
-    border-radius: 0;
-    border: 1px solid #d5d5d5;
-    box-shadow: none; }
-  .widget .form-control + .input-group-btn > button {
-    border-left: none; }
-  .widget .input-group .form-control:focus {
-    z-index: 2; }
+/*.widget {
+    padding: ($spacing-base * 4) 0;
+    border-bottom: 1px solid $light-grey;
 
+        @include mediaQ-max($bp-md) {
+            padding: ($spacing-base * 3) 0;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-weight: 500;
+
+            @include mediaQ-max($bp-md) {
+                font-size: $font-size-xxlg;
+            }
+        }
+
+        .form-control,
+        .input-group-btn > button {
+            padding: $spacing-base;
+            height: 50px;
+            color: $dark;
+            background: $light-grey;
+            border-radius: 0;
+            border: 1px solid $mid-grey;
+            box-shadow: none;
+        }
+
+        .form-control + .input-group-btn > button {
+            border-left: none;
+        }
+
+        .input-group .form-control:focus { 
+            z-index: 2;
+        }
+}
 .widget:first-child {
-  padding-top: 0; }
-
+    padding-top: 0;
+}*/
 .slick-slider-wrapper {
   position: relative; }
 
@@ -6814,13 +6824,6 @@ a:link {
   margin: 0;
   padding: 15px;
   display: block; }
-
-.page-content {
-  padding-top: 60px; }
-  @media (min-width: 767px) {
-    .page-content {
-      padding: 30px;
-      padding-top: 60px; } }
 
 .page-content__wrapper {
   margin-bottom: 30px; }

@@ -60,302 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(1);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-//# Styles for Webpack Bundleling
-__webpack_require__(2);
-
-(function ($) {
-
-    console.log('yo yo my script works');
-
-    //# Functionality
-    __webpack_require__(3);
-
-    //# Element Event Handlers
-    __webpack_require__(4);
-    __webpack_require__(5);
-    __webpack_require__(6);
-
-    //# Carousel 
-    __webpack_require__(8);
-
-    //# Sick Slider
-    //require('./slickSlider.js'); NOTE: can only get the script to work in the main app.js file.
-
-    /*========================================
-                     VIEW
-     ==========================================*/
-
-    var singPortPostSlickSlider = $('.single-portflio-post__slick-silder');
-    var $slickPrevArrow = $('.slick-prev');
-    var $slickNextArrow = $('.slick-next');
-
-    $('.center').slick({
-        prevArrow: '<button type="button" class="slick-prev btn-custom-5 icon-arrow-39"></button>',
-        nextArrow: '<button type="button" class="slick-next btn-custom-5 icon-arrow-40"></button>',
-        arrows: true,
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        variableWidth: true,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                arrows: true,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 3
-            }
-        }, {
-            breakpoint: 480,
-            settings: {
-                arrows: true,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
-            }
-        }]
-    });
-
-    $('.slider-nav').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        asNavFor: '.center',
-        dots: false,
-        arrows: false,
-        centerMode: true,
-        focusOnSelect: true
-    });
-
-    /*========================================
-                     CONTROLLER
-     ==========================================*/
-
-    //# to change the default slick slider buttons with text to no text and arrow icons.
-    function changeSlickArrow(selector, classname) {
-
-        singPortPostSlickSlider.find(selector).addClass(classname + ' btn-custom-5').text('');
-    }
-})(jQuery);
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-
-/*=============================================
-
-                CODE SNIPPETS
-
-* code taken from previous projects.
-
-===============================================*/
-
-//----------    INTO VIEW SCROLL EFFECTS --------------------------//
-
-(function ($) {
-
-    var $window = $(window);
-
-    $window.on('scroll', check_if_in_view); //---- scroll event 
-
-    function check_if_in_view() {
-        var window_height = $window.height();
-        var window_top_position = $window.scrollTop();
-        var window_bottom_position = window_top_position + window_height;
-
-        $.each($('section[data-scroll="in-view-animation"]'), function () {
-            var $element = $(this);
-            var element_height = $element.outerHeight();
-            var element_top_position = $element.offset().top;
-            var element_bottom_position = element_top_position + element_height;
-
-            if (element_bottom_position >= window_top_position && element_top_position <= window_bottom_position) {
-                $element.addClass('in-view');
-            }
-            /*else {
-                $element.removeClass('in-view');
-            }*/
-        });
-    }
-})(jQuery);
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-
-/*========================================
-
-                VIEW
-
-==========================================*/
-
-//# Selectors
-
-var headerMenuBtn = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#header-menu-btn');
-var headerMenu = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#header-menu');
-var body = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('body');
-
-//# Events
-
-headerMenuBtn.on({
-    'click': function click(e) {
-        headerMenuBtnHandler(e);
-    }
-});
-
-/*=========================================
-
-                Controller
-
-============================================*/
-
-function headerMenuBtnHandler(e) {
-    e.preventDefault();
-    body.toggleClass('header-menu-open');
-    headerMenu.toggleClass('menu-open');
-}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-/*========================================
-
-                VIEW
-
-==========================================*/
-
-//# Selectors
-
-
-//# Events
-
-
-/*========================================
-
-                CONTROLLER
-
-==========================================*/
-
-//# scroll effect - pass in a jquery selector for param.
-
-function clickScroll(selector) {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('body').animate({
-        scrollTop: selector.offset().top - 145
-    }, 1000);
-}
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-/*========================================
-
-                VIEW
-
-==========================================*/
-
-//# Selectors
-var $homeHeroSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#home_hero');
-var $heroInnerTextBox = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.item__text-container__inner-box');
-
-//# Events
-
-
-//console.log($heroInnerTextBox);
-
-
-/*========================================
-
-                CONTROLLER
-
-==========================================*/
-function heroInnerTextBoxHandler(selector) {
-                setTimeout(selector.addClass('carousel-textbox-move'), 3000);
-}
-
-heroInnerTextBoxHandler($heroInnerTextBox);
-
-/***/ }),
-/* 7 */,
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-
-
-/*========================================
-
-                VIEW
-
-==========================================*/
-
-//# Selectors
-var $carouselDots = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel-indicators li');
-var $carouselFirstItem = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.item:first-child.active');
-
-//# Events
-
-$carouselDots.on({
-    'click': function click() {
-        carouselHandler();
-    }
-});
-
-/*=========================================
-
-                Controller
-
-============================================*/
-function carouselHandler() {
-    $carouselFirstItem.removeClass('first-load');
-}
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10613,6 +10322,296 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(2);
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+//# Styles for Webpack Bundleling
+__webpack_require__(3);
+
+(function ($) {
+
+    console.log('yo yo my script works');
+
+    //# Functionality
+    __webpack_require__(4);
+
+    //# Element Event Handlers
+    __webpack_require__(5);
+    __webpack_require__(6);
+    __webpack_require__(7);
+
+    //# Carousel 
+    __webpack_require__(8);
+
+    //# Sick Slider
+    //require('./slickSlider.js'); NOTE: can only get the script to work in the main app.js file.
+
+    /*========================================
+                     VIEW
+     ==========================================*/
+
+    var singPortPostSlickSlider = $('.single-portflio-post__slick-silder');
+    var $slickPrevArrow = $('.slick-prev');
+    var $slickNextArrow = $('.slick-next');
+
+    $('.center').slick({
+        prevArrow: '<button type="button" class="slick-prev btn-custom-5 icon-arrow-39"></button>',
+        nextArrow: '<button type="button" class="slick-next btn-custom-5 icon-arrow-40"></button>',
+        arrows: true,
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        variableWidth: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                arrows: true,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 3
+            }
+        }, {
+            breakpoint: 480,
+            settings: {
+                arrows: true,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+            }
+        }]
+    });
+
+    $('.slider-nav').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '.center',
+        dots: false,
+        arrows: false,
+        centerMode: true,
+        focusOnSelect: true
+    });
+
+    /*========================================
+                     CONTROLLER
+     ==========================================*/
+
+    //# to change the default slick slider buttons with text to no text and arrow icons.
+    function changeSlickArrow(selector, classname) {
+
+        singPortPostSlickSlider.find(selector).addClass(classname + ' btn-custom-5').text('');
+    }
+})(jQuery);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+
+/*=============================================
+
+                CODE SNIPPETS
+
+* code taken from previous projects.
+
+===============================================*/
+
+//----------    INTO VIEW SCROLL EFFECTS --------------------------//
+
+(function ($) {
+
+    var $window = $(window);
+
+    $window.on('scroll', check_if_in_view); //---- scroll event 
+
+    function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
+
+        $.each($('section[data-scroll="in-view-animation"]'), function () {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = element_top_position + element_height;
+
+            if (element_bottom_position >= window_top_position && element_top_position <= window_bottom_position) {
+                $element.addClass('in-view');
+            }
+            /*else {
+                $element.removeClass('in-view');
+            }*/
+        });
+    }
+})(jQuery);
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+
+/*========================================
+
+                VIEW
+
+==========================================*/
+
+//# Selectors
+
+var headerMenuBtn = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#header-menu-btn');
+var headerMenu = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#header-menu');
+var body = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('body');
+
+//# Events
+
+headerMenuBtn.on({
+    'click': function click(e) {
+        headerMenuBtnHandler(e);
+    }
+});
+
+/*=========================================
+
+                Controller
+
+============================================*/
+
+function headerMenuBtnHandler(e) {
+    e.preventDefault();
+    body.toggleClass('header-menu-open');
+    headerMenu.toggleClass('menu-open');
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+/*========================================
+
+                VIEW
+
+==========================================*/
+
+//# Selectors
+
+
+//# Events
+
+
+/*========================================
+
+                CONTROLLER
+
+==========================================*/
+
+//# scroll effect - pass in a jquery selector for param.
+
+function clickScroll(selector) {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('body').animate({
+        scrollTop: selector.offset().top - 145
+    }, 1000);
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+/*========================================
+
+                VIEW
+
+==========================================*/
+
+//# Selectors
+var $homeHeroSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#home_hero');
+var $heroInnerTextBox = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.item__text-container__inner-box');
+
+//# Events
+
+
+//console.log($heroInnerTextBox);
+
+
+/*========================================
+
+                CONTROLLER
+
+==========================================*/
+function heroInnerTextBoxHandler(selector) {
+                setTimeout(selector.addClass('carousel-textbox-move'), 3000);
+}
+
+heroInnerTextBoxHandler($heroInnerTextBox);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+/*========================================
+
+                VIEW
+
+==========================================*/
+
+//# Selectors
+var $carouselDots = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel-indicators li');
+var $carouselFirstItem = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.item:first-child.active');
+
+//# Events
+
+$carouselDots.on({
+    'click': function click() {
+        carouselHandler();
+    }
+});
+
+/*=========================================
+
+                Controller
+
+============================================*/
+function carouselHandler() {
+    $carouselFirstItem.removeClass('first-load');
+}
 
 /***/ })
 /******/ ]);
