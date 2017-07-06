@@ -8,77 +8,11 @@
 
 get_header(); ?>
 
-<!-- HERO
+<!-- HERO - Slider
 =======================================================================-->
-    <section id="home_hero" class="hero" data-scroll="in-view-animation" >
-                <div id="home_carousel" class="carousel">
 
-                    <div class="carousel-inner">
+    <?php get_template_part( 'template-parts/page/content', 'hero-slider' ); ?>
 
-                        <div class="item active first-load">
-                            <img src="assets/green-image-2.jpeg" alt="Frog">
-
-                            <div class="container item__caption">
-
-                                <div class="row item__caption__inner">
-
-                                    <div class="col-sm-12 text-light">
-                                        <h5>It's the emerald you've always dreamed of</h5>
-                                        <h1>The emerald guru</h1>
-                                        <a href="index.html#home_contact-form"><button class="btn btn-default btn-lg btn-custom-1">Contact me</button></a>
-                                    </div>
-
-                                </div><!-- .item__caption__inner -->
-
-                            </div><!-- item__caption -->
-                        </div><!-- .item .active -->
-
-                        <div class="item">
-                            <img src="assets/green-image-1.jpeg" alt="Frog">
-
-                            <div class="container item__caption">
-
-                                <div class="row item__caption__inner">
-
-                                    <div class="col-sm-12 text-light">
-                                        <h5>It's the emerald you've always dreamed of</h5>
-                                        <h1>The emerald guru</h1>
-                                        <a href="index.html#home_contact-form"><button class="btn btn-default btn-lg btn-custom-1">Contact me</button></a>
-                                    </div>
-
-                                </div><!-- .item__caption__inner -->
-
-                            </div><!-- item__caption -->
-                        </div><!-- .item -->
-
-                        <div class="item">
-                            <img src="assets/green-image-3.jpeg" alt="Frog">
-
-                            <div class="container item__caption">
-
-                                <div class="row item__caption__inner">
-
-                                    <div class="col-sm-12 text-light">
-                                        <h5>It's the emerald you've always dreamed of</h5>
-                                        <h1>The emerald guru</h1>
-                                        <a href="index.html#home_contact-form"><button class="btn btn-default btn-lg btn-custom-1">Contact me</button></a>
-                                    </div>
-
-                                </div><!-- .item__caption__inner -->
-
-                            </div><!-- item__caption -->
-                        </div><!-- .item .active -->
-
-                    </div><!-- .carousel-inner -->
-
-                    <ol class="carousel-indicators">
-                        <li data-target=".carousel" data-slide-to="0" class="active"></li>
-                        <li data-target=".carousel" data-slide-to="1"></li>
-                        <li data-target=".carousel" data-slide-to="2"></li>
-                    </ol><!-- carousel-indicators -->
-
-                </div><!-- .carousel -->
-    </section><!-- .hero -->
 
 <!-- FEATURES
 =======================================================================-->
@@ -300,7 +234,7 @@ get_header(); ?>
 
         </article><!-- .page-content -->
 
-    <!-- FRONT PAGE - BOTTOM WIDGET AREA
+    <!-- (sidebar possibly)
     =======================================================================-->
 
 
