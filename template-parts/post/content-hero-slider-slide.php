@@ -6,11 +6,11 @@
 
 //# CUSTOM FIELDS UI
 
-$hero_slider_background_image = get_field( 'hero_slider_background_image' );
-$hero_slider_top_sub_title = get_field( 'hero_slider_top_sub_title' );
-$hero_slider_title = get_field( 'hero_slider_title' );
-$hero_slider_button_title = get_field( 'hero_slider_button_title' );
-$hero_slider_button_link = get_field( 'hero_slider_button_link' );
+$hero_slider_background_image   = get_field( 'hero_slider_background_image' );
+$hero_slider_top_sub_title      = get_field( 'hero_slider_top_sub_title' );
+$hero_slider_title              = get_field( 'hero_slider_title' );
+$hero_slider_button_title       = get_field( 'hero_slider_button_title' );
+$hero_slider_button_link        = get_field( 'hero_slider_button_link' );
 //====================================================================================//
 ?>
 
