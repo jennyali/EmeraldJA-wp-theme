@@ -127,6 +127,12 @@ get_header(); ?>
     <?php get_template_part( 'template-parts/page/content', 'bio-excerpt' ); ?>
 
 
+<!-- CONTACT FORM
+=======================================================================-->
+
+    <?php get_template_part( 'template-parts/page/content' , 'contact-form' ); ?>
+
+
     <!-- FRONT PAGE - PAGE CONTENT
     =======================================================================-->
 
