@@ -28,7 +28,7 @@
                 
                     <?php $postCount = 1; while( $loop->have_posts() ) : $loop->the_post(); $postCount++; ?>
 
-                        <?php if ( $postCount == 2 ) { ?>
+                        <?php if ( $postCount == 2 ) : ?>
 
                             <div class="item active first-load">
 
@@ -36,7 +36,7 @@
 
                             </div><!-- .item .active -->
 
-                        <?php } else { ?>
+                        <?php else : ?>
 
                             <div class="item">
 
@@ -44,7 +44,7 @@
 
                             </div><!-- .item .active -->
                         
-                        <?php } ?>
+                        <?php endif; ?>
 
                     <?php endwhile; wp_reset_query(); ?>
 
@@ -78,13 +78,13 @@
 
                 </ol><!-- carousel-indicators -->
 
-            <?php else : ?>
+            <?php else :?>
 
                 <h3>Sorry no Hero Slider has been created yet.</h3>
 
                 </div><!-- .carousel-inner -->
 
-            <?php endif; ?>
+            <?php endif; wp_reset_query();?>
 
     </div><!-- .carousel -->
 

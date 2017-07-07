@@ -1,9 +1,11 @@
 <?php
 
 /*
-        BLURB SECTION
+        BLURB SECTION    
 */
-
+//# CUSTOM FIELDS UI
+$blurb_section_title        = get_field( 'blurb_section_title' );
+$blurb_section_lead_text = get_field( 'blurb_section_lead_text' );
 //====================================================================================//
 ?>
 
@@ -13,20 +15,43 @@
             <div class="row">
                 <div class="col-sm-12 headline">
 
-                    <h2>Driving emerald greatness</h2>
+                    <h2><?php echo $blurb_section_title; ?></h2>
 
-                    <p>The foremost source for everything emerald</p>
+                    <p><?php echo $blurb_section_lead_text; ?></p>
 
                     <div class="headline__divider">
                         <hr>
-                    </div>
+                    </div><!-- .headline__divider -->
 
                 </div><!-- .headline -->
             </div><!-- .row -->
 
             <div class="row features-container">
 
-                <!-- INSERT BLURBS WP_QUERY -->
+                    <?php //+++     QUERY FOR DISPLAY BLURB POSTS   +++//
+
+                    $args = array(
+                        'post_type' => 'blurb_post',
+                        'orderby'   => 'post_id',
+                        'order'     => 'ASC',
+                        'posts_per_page' => '3',
+                    );
+
+                    $loop = new WP_Query( $args );
+
+                    if( $loop->have_posts() ) :?>
+
+                        <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+
+                            <?php get_template_part( 'template-parts/post/content' , 'blurb-post' ); ?>
+
+                        <?php endwhile; wp_reset_query(); ?>
+
+                    <?php else : ?>
+
+                        <h3>Sorry there are no current Blurb Posts.</h3>
+
+                    <?php endif; wp_reset_query(); ?>
 
             </div><!-- .row -->
 
