@@ -5,7 +5,7 @@ require('../sass/styles.scss');
 
 (function($) {
 
-    console.log('yo yo my script works');
+    //console.log('yo yo my script works');
 	
     //# Functionality
     require('./codeSnippets.js');
@@ -17,6 +17,9 @@ require('../sass/styles.scss');
 
     //# Carousel 
     require('./carouselHandler.js');
+
+    //# Portfolio Section Menu Ajax
+    require('./portSectionMenuAjax.js');
 
 
     //# Sick Slider
@@ -86,5 +89,7 @@ require('../sass/styles.scss');
             .addClass(classname + ' btn-custom-5')
             .text('');
     }
+
+    //console.log( 'end of script, still working.' );
 
 })( jQuery );

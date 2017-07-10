@@ -10340,7 +10340,7 @@ __webpack_require__(3);
 
 (function ($) {
 
-    console.log('yo yo my script works');
+    //console.log('yo yo my script works');
 
     //# Functionality
     __webpack_require__(4);
@@ -10352,6 +10352,9 @@ __webpack_require__(3);
 
     //# Carousel 
     __webpack_require__(8);
+
+    //# Portfolio Section Menu Ajax
+    __webpack_require__(9);
 
     //# Sick Slider
     //require('./slickSlider.js'); NOTE: can only get the script to work in the main app.js file.
@@ -10410,6 +10413,8 @@ __webpack_require__(3);
 
         singPortPostSlickSlider.find(selector).addClass(classname + ' btn-custom-5').text('');
     }
+
+    //console.log( 'end of script, still working.' );
 })(jQuery);
 
 /***/ }),
@@ -10612,6 +10617,45 @@ $carouselDots.on({
 function carouselHandler() {
     $carouselFirstItem.removeClass('first-load');
 }
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+
+
+var $portfolioSectionLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.portfolio-section .navbar li a');
+var $portfolioContainer = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.portfolio-container');
+
+$portfolioSectionLinks.on({
+    'click': function click(e) {
+        e.preventDefault();
+
+        var $category_name = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).text();
+
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.ajax({
+            url: ajaxportfolio.ajaxurl,
+            type: 'post',
+            data: {
+                action: 'ajax_portfolio_section',
+                query_vars: ajaxportfolio.query_vars,
+                category_name: $category_name
+            },
+            success: function success(result) {
+
+                $portfolioContainer.empty();
+
+                $portfolioContainer.append(result);
+            }
+        });
+    }
+});
 
 /***/ })
 /******/ ]);

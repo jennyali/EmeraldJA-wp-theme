@@ -5,6 +5,7 @@
 */
 
 //# CUSTOM FIELDS UI
+
 $blurb_image    = get_field( 'blurb_image' );
 $blurb_title    = get_field( 'blurb_title' );
 $blurb_text     = get_field( 'blurb_text' );
