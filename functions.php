@@ -46,6 +46,7 @@ function emerald_ja_setup() {
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'emerald_ja' ),
 		'header-menu' => esc_html__( 'Header Menu', 'emerald_ja' ),
+		'portfolio-section-menu' => esc_html__( 'Portfolio Section Menu', 'emerald_ja' ),
 	) );
 
 	/*
@@ -134,7 +135,13 @@ function emerald_ja_scripts() {
 
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/dist/js/bootstrap.min.js', array( 'jquery' ) );
 	
-	wp_enqueue_script( 'app', get_template_directory_uri() . '/dist/js/app.js', array( 'jquery' ), '1', false );
+	wp_enqueue_script( 'app', get_template_directory_uri() . '/dist/js/app.js', array( 'jquery' ), '1', true );
+
+	wp_localize_script( 'app', 'ajaxportfolio', array( 
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'query_vars' => json_encode( $wp_query->query ) 
+	));
+
 }
 add_action( 'wp_enqueue_scripts', 'emerald_ja_scripts' );
 
@@ -180,3 +187,53 @@ function header_nav() {
             'walker'            => new wp_bootstrap_navwalker())
     );
 };
+
+// Portfolio section navigation
+function portfolio_section_nav() {
+
+	wp_nav_menu( array(
+            'theme_location'    => 'portfolio-section-menu',
+            'depth'             => 1,
+            'container'         => 'false',
+            'menu_class'        => 'nav navbar-nav',
+            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+            'walker'            => new wp_bootstrap_navwalker())
+    );
+};
+
+//----------- AJAX CALLS -------------------//
+
+add_action( 'wp_ajax_ajax_portfolio_section', 'ajax_portfolio_section');
+
+
+function ajax_portfolio_section() {
+
+	$category_name = $_POST[ 'category_name' ];
+
+    $args = array(
+        'post_type' => 'portfolio_post',
+        'orderby'   => 'post_id',
+        'order'     => 'ASC',
+		'category_name' => $category_name,
+    );
+
+    $loop = new WP_QUERY( $args );
+
+        if( $loop->have_posts() ) :
+                        
+        while( $loop->have_posts() ) : $loop->the_post();
+                        
+        	get_template_part( 'template-parts/post/content', 'portfolio-section-panel' );
+
+        endwhile; wp_reset_query();
+
+        else : ?>
+
+        	<p>There are currently no portfolio post's to display.</p>
+
+    	<?php endif; wp_reset_query(); ?>
+
+		<?php
+
+    die();
+}
