@@ -104,8 +104,28 @@ add_action( 'after_setup_theme', 'emerald_ja_content_width', 0 );
  */
 function emerald_ja_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'emerald_ja' ),
+		'name'          => esc_html__( 'Standard Sidebar', 'emerald_ja' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'emerald_ja' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Front Page Sidebar', 'emerald_ja' ),
+		'id'            => 'sidebar-front-page',
+		'description'   => esc_html__( 'Add widgets here.', 'emerald_ja' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Blog Page Sidebar', 'emerald_ja' ),
+		'id'            => 'sidebar-blog-page',
 		'description'   => esc_html__( 'Add widgets here.', 'emerald_ja' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
@@ -201,6 +221,14 @@ function portfolio_section_nav() {
     );
 };
 
+// Add a classname to the_category()
+add_filter('the_category','add_class_to_category',10,3);
+
+function add_class_to_category( $thelist, $separator, $parents){
+    $class_to_add = 'btn btn-default btn-custom-4 btn-custom-4--small';
+    return str_replace('<a href="', '<a class="' . $class_to_add . '" href="', $thelist);
+}
+
 //----------- AJAX CALLS -------------------//
 
 add_action( 'wp_ajax_ajax_portfolio_section', 'ajax_portfolio_section');
@@ -210,30 +238,64 @@ function ajax_portfolio_section() {
 
 	$category_name = $_POST[ 'category_name' ];
 
-    $args = array(
-        'post_type' => 'portfolio_post',
-        'orderby'   => 'post_id',
-        'order'     => 'ASC',
-		'category_name' => $category_name,
-    );
+	//+++	 IF STATEMENT TO EITHER DISPLAY ALL CATEGORIES OR ONE CATEGORY DEPENDING ON LINK's STRING NAME 	+++//
 
-    $loop = new WP_QUERY( $args );
+	if( $category_name == 'All' ) {
 
-        if( $loop->have_posts() ) :
-                        
-        while( $loop->have_posts() ) : $loop->the_post();
-                        
-        	get_template_part( 'template-parts/post/content', 'portfolio-section-panel' );
+		$args = array(
+			'post_type' => 'portfolio_post',
+			'orderby'   => 'post_id',
+			'order'     => 'ASC',
+		);
 
-        endwhile; wp_reset_query();
+		$loop = new WP_QUERY( $args );
 
-        else : ?>
+			if( $loop->have_posts() ) :
+							
+			while( $loop->have_posts() ) : $loop->the_post();
+							
+				get_template_part( 'template-parts/post/content', 'portfolio-section-panel' );
 
-        	<p>There are currently no portfolio post's to display.</p>
+			endwhile; wp_reset_query();
 
-    	<?php endif; wp_reset_query(); ?>
+			else : ?>
 
-		<?php
+				<p>There are currently no portfolio post's to display.</p>
 
-    die();
+			<?php endif; wp_reset_query(); ?>
+
+			<?php
+
+		die();
+
+	} else {
+
+		$args = array(
+			'post_type' => 'portfolio_post',
+			'orderby'   => 'post_id',
+			'order'     => 'ASC',
+			'category_name' => $category_name,
+		);
+
+		$loop = new WP_QUERY( $args );
+
+			if( $loop->have_posts() ) :
+							
+			while( $loop->have_posts() ) : $loop->the_post();
+							
+				get_template_part( 'template-parts/post/content', 'portfolio-section-panel' );
+
+			endwhile; wp_reset_query();
+
+			else : ?>
+
+				<p>There are currently no portfolio post's to display.</p>
+
+			<?php endif; wp_reset_query(); ?>
+
+			<?php
+
+		die();
+
+	}
 }
