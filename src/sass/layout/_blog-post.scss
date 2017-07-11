@@ -12,6 +12,10 @@
 
 .blog-post__categories {
     @extend %blog-post__categories;
+
+    .post-categories {
+        list-style: none;
+    }
 }
 
 .blog-post__header {
@@ -31,7 +35,7 @@
 .single-blog-post {
     border-bottom: 1px solid $light-grey;
     
-        button {
+        a.btn {
             margin-bottom: $spacing-base * 2;
         }
 

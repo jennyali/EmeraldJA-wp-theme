@@ -62,7 +62,7 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
 
                         <?php else : ?>
 
-                            <p>There are currently no portfolio post's to display.</p>
+                            <p>There are currently no posts to display for this category.</p>
 
                         <?php endif; wp_reset_query(); ?>
                 

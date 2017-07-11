@@ -92,6 +92,12 @@ li {
 
 a {
     color: inherit;
+    transition: color 0.5s;
+}
+
+a:hover,
+a:focus {
+    color: $primary-color;
 }
 
 /*

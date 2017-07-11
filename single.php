@@ -9,13 +9,21 @@
 
 get_header(); ?>
 
+	<main class="container page-content">
+      <div class="row">
+
+    <!-- CONTENT
+    =======================================================================-->
+            <div class="col-sm-9">
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+
 
 		<?php
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/post/content', 'blog' );
 
 			the_post_navigation();
 
@@ -30,6 +38,22 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
+
+
+			</div><!-- .col -->
+
+    <!-- SIDEBAR
+    =======================================================================-->
+            <div class="col-sm-3 page-content__sidebar">
+
+				<?php get_sidebar(); ?>
+
+			</div><!-- .col -->
+
+	    </div><!-- .row -->
+    </main><!-- .page-content -->
+
+
 <?php
-get_sidebar();
+
 get_footer();

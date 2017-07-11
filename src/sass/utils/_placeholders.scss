@@ -82,7 +82,7 @@
         font-size: $font-size-sm;
     }
 
-    button {
+    a.btn {
         @include mediaQ-min($bp-md) {
             float: right;
         }
