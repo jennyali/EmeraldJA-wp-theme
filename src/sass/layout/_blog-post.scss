@@ -16,6 +16,12 @@
     .post-categories {
         list-style: none;
     }
+
+    .category-style-change {
+        @extend .btn;
+        @extend .btn-default;
+        @extend .btn-custom-4;
+    }
 }
 
 .blog-post__header {

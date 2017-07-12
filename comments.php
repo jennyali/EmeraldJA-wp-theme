@@ -31,15 +31,14 @@ if ( post_password_required() ) {
 				if ( 1 === $comment_count ) {
 					printf(
 						/* translators: 1: title. */
-						esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'emerald_ja' ),
-						'<span>' . get_the_title() . '</span>'
+						esc_html_e( '1 comment &ldquo;%1$s&rdquo;', 'emerald_ja' )
 					);
 				} else {
 					printf( // WPCS: XSS OK.
 						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'emerald_ja' ) ),
+						esc_html( _nx( '%1$s Comment ', '%1$s Comments ', $comment_count, 'comments title', 'emerald_ja' ) ),
 						number_format_i18n( $comment_count ),
-						'<span>' . get_the_title() . '</span>'
+						'<span>' . '</span>'
 					);
 				}
 			?>
@@ -62,6 +61,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					'callback' => 'mytheme_comment'
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -89,7 +89,23 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	$fields = array(
+
+			'author' =>
+				'<div class="comment-form-author form-group">' .
+				'<input class="form-control" id="author" name="author" type="text" placeholder="Name:" size="30"' . $aria_req . ' /></div>',
+
+			'email' =>
+				'<div class="comment-form-email form-group">' .
+				'<input class="form-control" id="email" name="email" type="text" placeholder="Email:" size="30"' . $aria_req . ' /></div>',
+
+		);
+
+	comment_form( $args = array(
+		'comment_field' => '<div class="comment-form-comment form-group"><textarea class="form-control" id="comment" name="comment" placeholder="Message:" rows="10" aria-required="true"></textarea></div>',
+		'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+		'comment_notes_before' => '<p class="comment-notes">' . __( 'Your email address will not be published.' ) . '</p>',
+	));
 	?>
 
 </div><!-- #comments -->

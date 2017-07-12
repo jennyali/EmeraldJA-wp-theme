@@ -5,4 +5,18 @@
         p {
             margin-bottom: $spacing-base * 2;
         }
+
+        .entry-footer {
+
+            span {
+                margin-right: 5px;
+            }
+        }
+
+        .cat-links {
+
+            a {
+                color: $primary-color;
+        }
+    }
 }
