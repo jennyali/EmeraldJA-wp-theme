@@ -1,0 +1,53 @@
+
+/*
+    This form is seen when using wordpress's get_search_form() tag.
+*/
+
+.search-form {
+
+    .screen-reader {
+
+    }
+
+    .search-field {
+        //background: $dark-grey;
+
+        background: $light-grey;
+        border: 1px solid $mid-grey;
+        box-shadow: none;
+        padding: 0 $spacing-base;
+        font-weight: 300;
+        height: 50px;
+
+        border-radius: 0;
+        border: none;
+        border-bottom: 2px solid $primary-color;
+        transition: border-bottom 0.2s;
+        outline: transparent;
+
+        //-webkit-box-shadow: inset 0px 1px 5px -1px rgba(0,0,0,0.3);
+        //-moz-box-shadow: inset 0px 1px 5px -1px rgba(0,0,0,0.3);
+        //box-shadow: inset 0px 1px 5px -1px rgba(0,0,0,0.3);
+
+        &:focus {
+            border-bottom: 2px solid $secondary-color;
+        }
+    }
+
+    .search-submit {
+        padding: $spacing-base;
+        height: 50px;
+        color: $dark;
+        background: $light-grey;
+        border-radius: 0;
+        //border: 1px solid $mid-grey;
+        box-shadow: none;
+        border: none;
+        border-bottom: 2px solid $primary-color;
+        
+
+        position: relative;
+        right: 5px;
+        //border-left: none;
+    }
+}

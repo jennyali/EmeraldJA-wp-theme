@@ -1,0 +1,52 @@
+
+#respond {
+    @extend .blog-post__reply-section;
+
+    input,
+    textarea {
+        background: $light-grey;
+        border: 1px solid $mid-grey;
+        border-radius: 0;
+        box-shadow: none;
+        padding: $spacing-base ($spacing-base * 2);
+        font-weight: 300;
+    }
+
+    #submit {
+        @extend .btn-custom-4;
+        margin: $default-row-margin;
+    }
+}
+
+#reply-title { 
+    @extend h2;
+}
+
+#cancel-comment-reply-link { }
+
+#commentform { }
+
+#author { }
+
+#email { }
+
+#url { }
+
+#comment {}
+
+
+.comment-notes { }
+
+.required { }
+
+.comment-form-author { }
+
+.comment-form-email { }
+
+.comment-form-url { }
+
+.comment-form-comment { }
+
+.form-allowed-tags { }
+
+.form-submit {}

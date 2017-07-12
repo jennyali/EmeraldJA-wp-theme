@@ -225,9 +225,71 @@ function portfolio_section_nav() {
 add_filter('the_category','add_class_to_category',10,3);
 
 function add_class_to_category( $thelist, $separator, $parents){
-    $class_to_add = 'btn btn-default btn-custom-4 btn-custom-4--small';
+    $class_to_add = 'category-style-change';
     return str_replace('<a href="', '<a class="' . $class_to_add . '" href="', $thelist);
 }
+
+// Change the layout of the COMMENTS in comment.php
+function mytheme_comment($comment, $args, $depth) {
+
+   $GLOBALS['comment'] = $comment; ?>
+
+   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+
+     <div id="comment-<?php comment_ID(); ?>">
+
+      <div class="comment-author vcard">
+
+         <?php echo get_avatar($comment,$size='48'); ?>
+
+         <?php printf(__('<span class="says">by: </span><b class="fn">%s</b>'), get_comment_author_link()) ?>
+
+      </div>
+
+      <?php if ($comment->comment_approved == '0') : ?>
+
+         <em><?php _e('Your comment is awaiting moderation.') ?></em>
+         <br />
+
+      <?php endif; ?>
+
+      <div class="comment-metadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','') ?></div>
+
+      <div class="comment-content"><?php comment_text() ?></div>
+
+      <div class="reply">
+
+			 <?php 
+				$myclass = 'icon-reply-mail-2';
+				echo preg_replace( '/comment-reply-link/', 'comment-reply-link ' . $myclass, 
+					get_comment_reply_link(array_merge( $args, array(
+						'add_below' => $add_below, 
+						'depth' => $depth,
+						'reply_text' => ' ', 
+						'max_depth' => $args['max_depth']))), 1 ); 
+			?>
+
+      </div>
+
+     </div>
+	 
+<?php
+}
+
+// 	Change the layout of the default get_search_form();
+
+function wpdocs_my_search_form( $form ) {
+    $form = '<form role="search" method="get" id="searchform" class="search-form" action="' . home_url( '/' ) . '" >
+    <div>
+    <input class="search-field" type="text" placeholder="Search..."  name="s" id="s" />
+    <button class="search-submit icon-search" id="searchsubmit" value="" /></button>
+    </div>
+    </form>';
+ 
+    return $form;
+}
+add_filter( 'get_search_form', 'wpdocs_my_search_form' );
+
 
 //----------- AJAX CALLS -------------------//
 
