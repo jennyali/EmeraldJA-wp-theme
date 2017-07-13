@@ -4,23 +4,19 @@
 
 <?php //# Full Page no sidebar // ?>
 
-<?php
-    if (function_exists('category_image_src')) {
-        $category_image = category_image_src( array( 'size' => 'full' ) , false ); 
-    } else {
-        $category_image = '';
-    }
-?>
-
 <?php get_header(); ?>
 
     <div class="container">
         <main class="row">
 
+            <!-- PORTFOLIO GALLERY
+            =======================================================================-->
             <section class="col-sm-12">
 
                 <h2><?php the_title(); ?></h2>
-                
+
+                <img src="<?php echo $test_category_image; ?>" class="img-responsive">
+
                     <div>
                         <?php
 
@@ -28,125 +24,41 @@
 
                             $cats = get_categories();
 
+                            //===========  LOOP TO GO THROUGH CHILD CATEGORIES =================//
                             foreach( $cats as $category){
 
                                 if (cat_is_ancestor_of( $parent_cat, $category )) : ?>
 
-                                    <p><?php echo $category->name; ?></p>
-                                    <?php echo category_description($category); ?>
+                                    <div class="col-sm-4 port-gallery__item">
 
-                                    <?php echo $category_image; ?>
+                                        <?php 
 
-                                    
-                                    <?php if ($category_image) : ?>
+                                            $taxonomy = $category->taxonomy;
+                                            $term_id = $category->cat_ID;
 
-                                    <!-- category featured image -->
-                                    <img src="<?php echo $category_image; ?>" alt="<?php single_cat_title();?>" desc="<?php echo wp_strip_all_tags( category_description() );?>"/>
+                                            $test_category_image = get_field( 'category_image', $taxonomy . '_' . $term_id);
+                                        
+                                        ?>
 
-                                    <?php endif; ?>
+                                        <figure class="port-gallery__item__thumbnail">
+
+                                            <img src="<?php echo $test_category_image; ?>" class="img-responsive">
+
+                                        </figure><!-- .port-gallery__item__thumbnail -->
+
+                                        <div class="port-gallery__item__text">
+
+                                            <a href="<?php echo get_category_link($category->cat_ID); ?>"><h4><?php echo $category->name; ?></h4></a>
+
+                                        <?php echo category_description($category); ?>
+
+                                        </div><!-- .port-gallery__item__text -->
+                                    </div><!-- .port-gallery__item -->
 
                                 <?php endif; 
                             }
                         ?>
                     </div>
-
-
-
-
-
-
-            <!-- PORTFOLIO GALLERY
-            =======================================================================-->
-
-                <section id="portfolio-page__gallery" class="gallery-section">
-                    <div class="container">
-
-                            <div class="row port-gallery">
-
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
-
-                                        <img src="assets/green-image-1-crop.jpeg" class="img-responsive">
-
-                                    </figure><!-- .port-gallery__item__thumbnail -->
-
-                                    <div class="port-gallery__item__text">
-                                        <a href="archive-page.html"><h4>Category</h4></a>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
-
-
-
-                                <!-- ****** REPEATED POSTS ******** -->
-
-
-
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
-
-                                        <img src="assets/green-image-2.jpeg" class="img-responsive">
-
-                                    </figure><!-- .port-gallery__item__thumbnail -->
-
-                                    <div class="port-gallery__item__text">
-                                        <h4>Category</h4>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
-
-
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
-
-                                        <img src="assets/green-image-1.jpeg" class="img-responsive">
-
-                                    </figure><!-- .port-gallery__item__thumbnail -->
-
-                                    <div class="port-gallery__item__text">
-                                        <h4>Category</h4>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
-
-                                <div class="clearfix"></div>
-
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
-
-                                        <img src="assets/green-image-2.jpeg" class="img-responsive">
-
-                                    </figure><!-- .port-gallery__item__thumbnail -->
-
-                                    <div class="port-gallery__item__text">
-                                        <h4>Category</h4>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
-
-                            </div><!-- .portfolio-container -->
-
-                        </div><!-- .row -->
-
-                    </div><!-- .container -->
-                </section><!-- #home_portfolio -->
-
 
                         <!-- PAGINATION
                         ================================================================-->

@@ -4,6 +4,8 @@
 
 <?php //# Full Page no sidebar // ?>
 
+
+
 <?php get_header(); ?>
 
     <div class="container">
@@ -13,135 +15,63 @@
 
                 <h2><?php single_cat_title(); ?></h2>
                 
+                <?php 
+                    $queried_object = get_queried_object();
 
+                    //echo var_dump($queried_object);
 
-                <ul>
-                <?php wp_list_categories( array(
-                    'orderby'            => 'id',
-                    'show_count'         => true,
-                    'use_desc_for_title' => false,
-                    'child_of'           => 7
-                ) ); ?>
-                </ul>
+                    $taxonomy = $queried_object->taxonomy;
+                    $term_id = $queried_object->term_id;  
 
-                01
-    <?php
-    if (is_category()) {
-    $this_category = get_category($cat);
-    }
-    ?>
-    <?php
-    if($this_category->category_parent)
-    $this_category = wp_list_categories('orderby=id&show_count=0
-    &title_li=&use_desc_for_title=1&child_of='.$this_category->category_parent.
-    "&echo=0"); else
-    $this_category = wp_list_categories('orderby=id&depth=1&show_count=0
-    &title_li=&use_desc_for_title=1&child_of='.$this_category->cat_ID.
-    "&echo=0");
+                    // load thumbnail for this taxonomy term (term object)
+                    //$thumbnail = get_field('thumbnail', $queried_object);
 
-    if ($this_category) { ?>
-<ul>
+                    // load thumbnail for this taxonomy term (term string)
+                    $thumbnail = get_field('category_image', $taxonomy . '_' . $term_id);
 
-<?php echo $this_category; ?>
-</ul>
-<?php } ?>
+                    echo var_dump($thumbnail);
 
+                    $test_text = get_field('random_text', $taxonomy . '_' . $term_id);
 
+                    echo var_dump($test_text);
+                
+                ?>
 
+                 <img src="<?php echo $thumbnail['url']; ?>" class="img-responsive">
 
+                    <div>
+                        <?php
 
+                            $parent_cat = get_category_by_slug( 'portfolio' );
 
-            <!-- PORTFOLIO GALLERY
-            =======================================================================-->
+                            $cats = get_categories();
 
-                <section id="portfolio-page__gallery" class="gallery-section">
-                    <div class="container">
+                            foreach( $cats as $category){
 
-                            <div class="row port-gallery">
+                                if (cat_is_ancestor_of( $parent_cat, $category )) : ?>
 
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
+                                    <div class="col-sm-4 port-gallery__item">
+                                        <figure class="port-gallery__item__thumbnail">
 
-                                        <img src="assets/green-image-1-crop.jpeg" class="img-responsive">
+                                            <?php $image = get_field('category_image', $category); ?>
 
-                                    </figure><!-- .port-gallery__item__thumbnail -->
+                                            <img src="<?php echo $image['url']; ?>" class="img-responsive">
 
-                                    <div class="port-gallery__item__text">
-                                        <a href="archive-page.html"><h4>Category</h4></a>
+                                        </figure><!-- .port-gallery__item__thumbnail -->
 
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
+                                        <div class="port-gallery__item__text">
 
+                                            <a href="<?php echo get_category_link($category->cat_ID); ?>"><h4><?php echo $category->name; ?></h4></a>
 
+                                        <?php echo category_description($category); ?>
 
-                                <!-- ****** REPEATED POSTS ******** -->
+                                        </div><!-- .port-gallery__item__text -->
+                                    </div><!-- .port-gallery__item -->
 
-
-
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
-
-                                        <img src="assets/green-image-2.jpeg" class="img-responsive">
-
-                                    </figure><!-- .port-gallery__item__thumbnail -->
-
-                                    <div class="port-gallery__item__text">
-                                        <h4>Category</h4>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
-
-
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
-
-                                        <img src="assets/green-image-1.jpeg" class="img-responsive">
-
-                                    </figure><!-- .port-gallery__item__thumbnail -->
-
-                                    <div class="port-gallery__item__text">
-                                        <h4>Category</h4>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
-
-                                <div class="clearfix"></div>
-
-                                <div class="col-sm-4 port-gallery__item">
-                                    <figure class="port-gallery__item__thumbnail">
-
-                                        <img src="assets/green-image-2.jpeg" class="img-responsive">
-
-                                    </figure><!-- .port-gallery__item__thumbnail -->
-
-                                    <div class="port-gallery__item__text">
-                                        <h4>Category</h4>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ligula erat, 
-                                            lobortis et risus in, suscipit sagittis metus. lobortis et risus in, suscipit sagittis metus.
-                                        </p>
-                                    </div><!-- .port-gallery__item__text -->
-                                </div><!-- .port-gallery__item -->
-
-                            </div><!-- .portfolio-container -->
-
-                        </div><!-- .row -->
-
-                    </div><!-- .container -->
-                </section><!-- #home_portfolio -->
+                                <?php endif; 
+                            }
+                        ?>
+                    </div>
 
 
                         <!-- PAGINATION
