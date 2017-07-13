@@ -216,11 +216,15 @@ th {
   #page .comment-list .vcard span, #page .comment-list .comment-metadata, .widget a, .widget li, .widget span,
   h2,
   #reply-title,
-  h3 {
+  h3,
+  .widget h2,
+  .widget #reply-title {
     orphans: 3;
     widows: 3; }
   h2, #reply-title,
-  h3 {
+  h3,
+  .widget h2,
+  .widget #reply-title {
     page-break-after: avoid; }
   .navbar {
     display: none; }
@@ -1139,7 +1143,7 @@ hr {
 [role="button"] {
   cursor: pointer; }
 
-h1, h2, #reply-title, h3, h4, h5, h6,
+h1, h2, #reply-title, h3, .widget h2, .widget #reply-title, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
@@ -1147,8 +1151,8 @@ h1, h2, #reply-title, h3, h4, h5, h6,
   color: inherit; }
   h1 small,
   h1 .small, h2 small, #reply-title small,
-  h2 .small, #reply-title .small, h3 small,
-  h3 .small, h4 small,
+  h2 .small, #reply-title .small, h3 small, .widget h2 small, .widget #reply-title small,
+  h3 .small, .widget h2 .small, .widget #reply-title .small, h4 small,
   h4 .small, h5 small,
   h5 .small, h6 small,
   h6 .small,
@@ -1166,7 +1170,9 @@ h1, h2, #reply-title, h3, h4, h5, h6,
 h1, .h1,
 h2,
 #reply-title, .h2,
-h3, .h3 {
+h3,
+.widget h2,
+.widget #reply-title, .h3 {
   margin-top: 20px;
   margin-bottom: 10px; }
   h1 small,
@@ -1175,8 +1181,8 @@ h3, .h3 {
   h2 small, #reply-title small,
   h2 .small, #reply-title .small, .h2 small,
   .h2 .small,
-  h3 small,
-  h3 .small, .h3 small,
+  h3 small, .widget h2 small, .widget #reply-title small,
+  h3 .small, .widget h2 .small, .widget #reply-title .small, .h3 small,
   .h3 .small {
     font-size: 65%; }
 
@@ -1202,7 +1208,7 @@ h1, .h1 {
 h2, #reply-title, .h2 {
   font-size: 30px; }
 
-h3, .h3 {
+h3, .widget h2, .widget #reply-title, .h3 {
   font-size: 24px; }
 
 h4, .h4 {
@@ -6069,7 +6075,7 @@ h2, #reply-title {
       font-size: 32px;
       line-height: 1.2; } }
 
-h3 {
+h3, .widget h2, .widget #reply-title {
   line-height: 1.5;
   margin: 15px 0 20px 0; }
 
@@ -6907,8 +6913,13 @@ a:link {
   box-shadow: none;
   border: none;
   border-bottom: 2px solid #06D6A0;
+  outline: transparent;
+  transition: color 0.25s;
   position: relative;
   right: 5px; }
+  .search-form .search-submit:hover, .search-form .search-submit:focus, .search-form .search-submit:active {
+    color: #ff1f79;
+    border-bottom: 2px solid #ff1f79; }
 
 @media (max-width: 767px) {
   .headline {
