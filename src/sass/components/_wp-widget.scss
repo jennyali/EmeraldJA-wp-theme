@@ -18,6 +18,10 @@
         color: $primary-color;
     }
 
+    h2 {
+        @extend h3;
+    }
+
 }
 
 .widget_search {
