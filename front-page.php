@@ -20,6 +20,8 @@ $show_contact_form = get_field( 'show_contact_form' );
 
 get_header(); ?>
 
+<?php echo var_dump( $show_hero_slider_section ); ?>
+
 
 <!-- HERO - Slider
 =======================================================================-->
