@@ -17,6 +17,8 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : ?>
 
+            <!-- CATEGORY HEADER
+            ============================================================================-->
             <div class="row">
 
 				<header class="headline category-caption col-sm-12">
@@ -35,18 +37,33 @@ get_header(); ?>
 				</header><!-- .headline -->
             
             </div><!-- .row -->
+
+            <!-- CATEGORY GALLERY - subcategories of 'Portfolio'
+            ============================================================================-->
             <div class="row category-gallery">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+                <?php 
+                        $args = array(
+                            'post_type' => 'portfolio_post',
+                            'orderby'   => 'post_id',
+                            'order'     => 'ASC'
+                        );
 
-                <div class="col-sm-6 col-md-4">
+                ?>
 
-					<?php get_template_part( 'template-parts/post/content-portfolio', get_post_format() ); ?>
+                <?php $loop = new WP_Query( $args ); ?>
 
-                </div>
+                <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
-				<?php endwhile;
+                    <div class="col-sm-6 col-md-4">
 
+                        <?php get_template_part( 'template-parts/post/content-portfolio', get_post_format() ); ?>
+
+                    </div>
+
+                <?php endwhile; wp_reset_query(); ?>
+
+            <?php
 				the_posts_navigation();
 
 			else :
