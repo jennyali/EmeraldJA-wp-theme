@@ -17,7 +17,7 @@
         <img src="<?php the_post_thumbnail_url(); ?>" class="img-responsive">
 
         <div class="portfolio-item__overlay">
-            <a href="single-portfolio-post.html">
+            <a href="<?php echo get_permalink(); ?>">
                 <h4><?php the_title(); ?><span class="icon-arrow-68 btn-custom-3" ></span></h4>
             </a>
         </div><!-- .portfolio-item__overlay -->
