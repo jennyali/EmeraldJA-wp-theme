@@ -1,5 +1,3 @@
-
-	
 <?php /* Template Name: Portfolio Page */ ?>
 
 <?php //# Full Page no sidebar // ?>
@@ -15,50 +13,48 @@
 
                 <h2><?php the_title(); ?></h2>
 
-                <img src="<?php echo $test_category_image; ?>" class="img-responsive">
+                <?php $args = array(
+                    'taxonomy' => 'topics',
+                ); 
 
-                    <div>
-                        <?php
+                $mytax = get_categories($args); ?>
 
-                            $parent_cat = get_category_by_slug( 'portfolio' );
+                <div>
 
-                            $cats = get_categories();
+                    
+                    <?php //=============== LOOP FOR GETTING TAXONOMY 'TERMS' ================//
+                    
+                        foreach( $mytax as $tax ) { ?>
 
-                            //===========  LOOP TO GO THROUGH CHILD CATEGORIES =================//
-                            foreach( $cats as $category){
+                        <article class="col-sm-4 port-gallery__item">
 
-                                if (cat_is_ancestor_of( $parent_cat, $category )) : ?>
+                            <?php 
+                                $taxonomy = $tax->taxonomy;
+                                $term_id = $tax->term_id;
 
-                                    <div class="col-sm-4 port-gallery__item">
-
-                                        <?php 
-
-                                            $taxonomy = $category->taxonomy;
-                                            $term_id = $category->cat_ID;
-
-                                            $test_category_image = get_field( 'category_image', $taxonomy . '_' . $term_id);
+                                $test_category_image = get_field( 'topic_image', $taxonomy . '_' . $term_id);
                                         
-                                        ?>
+                            ?>
 
-                                        <figure class="port-gallery__item__thumbnail">
+                                <figure class="port-gallery__item__thumbnail">
 
-                                            <img src="<?php echo $test_category_image; ?>" class="img-responsive">
+                                    <img src="<?php echo $test_category_image; ?>" class="img-responsive">
 
-                                        </figure><!-- .port-gallery__item__thumbnail -->
+                                </figure><!-- .port-gallery__item__thumbnail -->
 
-                                        <div class="port-gallery__item__text">
+                                <div class="port-gallery__item__text">
 
-                                            <a href="<?php echo get_category_link($category->cat_ID); ?>"><h4><?php echo $category->name; ?></h4></a>
+                                    <a href="<?php echo get_category_link($tax->term_id); ?>"><h4><?php echo $tax->name; ?></h4></a>
 
-                                        <?php echo category_description($category); ?>
+                                    <?php echo category_description($tax); ?>
 
-                                        </div><!-- .port-gallery__item__text -->
-                                    </div><!-- .port-gallery__item -->
+                                </div><!-- .port-gallery__item__text -->
 
-                                <?php endif; 
-                            }
-                        ?>
-                    </div>
+                            </article><!-- .port-gallery__item -->
+
+                    <?php } ?>
+
+                </div>
 
                         <!-- PAGINATION
                         ================================================================-->
