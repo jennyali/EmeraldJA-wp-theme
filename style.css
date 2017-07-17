@@ -6571,36 +6571,64 @@ a:link {
   background: none;
   margin-bottom: 0;
   padding: 20px 15px; }
+  .breadcrumb span {
+    color: #d5d5d5;
+    font-weight: bold; }
   .breadcrumb a {
-    color: #222; }
+    color: #222;
+    font-weight: bold;
+    padding: 0 5px; }
   .breadcrumb li {
     font-weight: 700; }
   .breadcrumb li.active {
     color: #06D6A0; }
+  .breadcrumb strong {
+    color: #06D6A0;
+    padding: 0 5px; }
 
-.pagination > li > a,
-.pagination > li > span {
+.breadcrumb_last {
+  color: #06D6A0; }
+
+.pagination-wrapper {
+  padding-top: 90px; }
+
+.pagination .screen-reader-text {
+  display: none; }
+
+.pagination .page-numbers {
   background: #06D6A0;
   border-color: #06D6A0;
   color: #FFFFFF;
   margin: 0 10px 10px 0;
   padding: 15px 20px;
   border-radius: 5px;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 0; }
+  .pagination .page-numbers:hover, .pagination .page-numbers:focus, .pagination .page-numbers:active {
+    background: #222;
+    border-color: #222;
+    color: #FFFFFF; }
 
-.pagination > .active > a,
-.pagination > .active > a:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span,
-.pagination > .active > span:hover,
-.pagination > .active > span:focus,
-.pagination > li > a:hover,
-.pagination > li > a:focus,
-.pagination > li > span:hover,
-.pagination > li > span:focus {
+.pagination .current {
   background: #222;
   border-color: #222;
   color: #FFFFFF; }
+
+.pagination .prev,
+.pagination .next {
+  background: none;
+  border-color: none;
+  color: #222; }
+  .pagination .prev:hover, .pagination .prev:focus, .pagination .prev:active,
+  .pagination .next:hover,
+  .pagination .next:focus,
+  .pagination .next:active {
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #06D6A0; }
 
 .widget {
   padding: 60px 0;

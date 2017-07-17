@@ -35,13 +35,13 @@ get_header(); ?>
 
                 <?php endif; ?>
 
-                <p class="post-page-navigation">
+                    <?php the_posts_pagination( array(
+                            'mid_size'  => 2,
+                            'prev_text' => __( '&#x000AB; Previous', 'textdomain' ),
+                            'next_text' => __( 'Next &#x000BB;', 'textdomain' ),
+                        ) ); 
+                    ?>
 
-                    <?php previous_posts_link( "Recent Posts" ); ?>
-
-                    <?php next_posts_link( "Older Posts" ); ?>
-
-                </p>
 
             </div><!-- .col -->
             <div class="col-sm-3">

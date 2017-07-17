@@ -22,6 +22,7 @@ get_header(); ?>
 
 				<header class="headline category-caption col-sm-12">
 
+
                     <h1><?php echo single_cat_title(); ?></h1>
 
 					<?php
@@ -50,37 +51,51 @@ get_header(); ?>
                 ?>
 
                 <?php 
+                    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
                     $args = array(
                         'post_type' => 'portfolio_post',
                         'order'     => 'ASC',
-                        	'tax_query' => array(
+                        'tax_query' => array(
                                 array(
                                     'taxonomy' => 'topics',
                                     'field'    => 'slug',
                                     'terms'    => $current_term,
                                 ),
                             ),
+                        'posts_per_page' => 3,
+                        'paged'          => $paged,
                     );
 
                 ?>
 
                 <?php $loop = new WP_Query( $args ); ?>
 
-                <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+                    <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
-                    <div class="col-sm-6 col-md-4">
+                        <div class="col-sm-6 col-md-4">
 
-                        <?php get_template_part( 'template-parts/post/content-portfolio', get_post_format() ); ?>
+                            <?php get_template_part( 'template-parts/post/content-portfolio', get_post_format() ); ?>
 
-                    </div>
+                        </div>
 
-                <?php endwhile; wp_reset_query(); ?>
+                    <?php endwhile; wp_reset_query(); ?>
 
-            <?php
-				the_posts_navigation();
+                    <!-- PAGINATION
+                    ============================================================================-->
 
-			else :
+                        <div class="col-sm-12">
+
+                            <?php the_posts_pagination( array(
+                                    'mid_size'  => 2,
+                                    'prev_text' => __( '&#x000AB; Previous', 'textdomain' ),
+                                    'next_text' => __( 'Next &#x000BB;', 'textdomain' ),
+                                ) ); 
+                            ?>
+                            
+                        </div><!-- .col -->
+
+			<?php else :
 
 				get_template_part( 'template-parts/content', 'none' );
 
