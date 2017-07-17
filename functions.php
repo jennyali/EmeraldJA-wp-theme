@@ -367,7 +367,7 @@ function ajax_portfolio_section() {
 			'post_type' => 'portfolio_post',
 			'orderby'   => 'post_id',
 			'order'     => 'ASC',
-			'category_name' => $category_name,
+			'topics' => $category_name,
 		);
 
 		$loop = new WP_QUERY( $args );
@@ -395,6 +395,8 @@ function ajax_portfolio_section() {
 
 //----------------- Register new TAXONOMIES ------------------------//
 
+//# Creation of 'topics' for categorising custom post type 'portfolio_post's.
+
 add_action( 'init', 'create_topics_hierarchical_taxonomy', 0 );
 
 function create_topics_hierarchical_taxonomy() {
@@ -420,5 +422,40 @@ function create_topics_hierarchical_taxonomy() {
     'show_admin_column' => true,
     'query_var' => true,
     'rewrite' => array( 'slug' => 'topic' ),
+  ));
+}
+
+//# Creation of 'webtags' for listing within 'portfolio_post' the web languages a project has used. 
+
+add_action( 'init', 'create_webtags_nonhierarchical_taxonomy', 0 );
+
+function create_webtags_nonhierarchical_taxonomy() {
+
+  $labels = array(
+    'name' => _x( 'Web Tags', 'taxonomy general name' ),
+    'singular_name' => _x( 'Web Tag', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Web Tags' ),
+    'popular_items' => __( 'Popular Web Tags' ),
+    'all_items' => __( 'All Web Tags' ),
+    'parent_item' => null,
+    'parent_item_colon' => null,
+    'edit_item' => __( 'Edit Web Tag' ),
+    'update_item' => __( 'Update Web Tag' ),
+    'add_new_item' => __( 'Add New Web Tag' ),
+    'new_item_name' => __( 'New Web Tag Name' ),
+    'separate_items_with_commas' => __( 'Separate web tags with commas' ),
+    'add_or_remove_items' => __( 'Add or remove web tags' ),
+    'choose_from_most_used' => __( 'Choose from the most used web tags' ),
+    'menu_name' => __( 'Web Tags' ),
+  );
+
+  register_taxonomy('web_tags','post',array(
+    'hierarchical' => false,
+    'labels' => $labels,
+    'show_ui' => true,
+    'show_admin_column' => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'web_tags' ),
   ));
 }

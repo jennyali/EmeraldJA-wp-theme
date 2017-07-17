@@ -21,7 +21,7 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
 
                     <?php if( !empty( $portfolio_section_text ) ) : ?>
 
-                    <p><?php echo $portfolio_section_text; ?></p>
+                        <p><?php echo $portfolio_section_text; ?></p>
 
                     <?php endif; ?>
 
@@ -44,10 +44,14 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
 
                     <?php //+++     QUERY TO OBTAIN PANELS      +++//
 
+                        $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
                         $args = array(
                             'post_type' => 'portfolio_post',
                             'orderby'   => 'post_id',
-                            'order'     => 'ASC'
+                            'order'     => 'ASC',
+                            'posts_per_page' => 6,
+                            'paged'          => $paged,
                         );
 
                         $loop = new WP_QUERY( $args );
@@ -59,6 +63,7 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
                                 <?php get_template_part( 'template-parts/post/content', 'portfolio-section-panel' ); ?>
 
                             <?php endwhile; wp_reset_query(); ?>
+
 
                         <?php else : ?>
 

@@ -48,4 +48,20 @@
 		
 		</header><!-- .site-header -->
 
+		<?php if( !is_front_page() ) : ?>
+
+		<section class="breadcrumbs-section container-fluid">
+			<div class="breadcrumb container">
+				<?php
+					if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb('
+						<p id="breadcrumbs">','</p>
+					');
+					}
+				?>
+			</div>
+		</section>
+
+		<?php endif; ?>
+
 		<div id="content" class="site-content">

@@ -38,11 +38,23 @@ get_header(); ?>
 					*/
 					get_template_part( 'template-parts/content', 'search' );
 
-				endwhile;
+				endwhile; ?>
 
-				the_posts_navigation();
+					<!-- PAGINATION
+                    ============================================================================-->
 
-			else :
+                    <div class="pagination-wrapper">
+
+                        <?php the_posts_pagination( array(
+                                'mid_size'  => 2,
+                                'prev_text' => __( '&#x000AB; Previous', 'textdomain' ),
+                                'next_text' => __( 'Next &#x000BB;', 'textdomain' ),
+                            ) ); 
+                        ?>
+                            
+                    </div><!-- .col -->
+
+			<?php else :
 
 				get_template_part( 'template-parts/content', 'none' );
 

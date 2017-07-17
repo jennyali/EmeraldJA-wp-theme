@@ -104,10 +104,10 @@ $port_image_four = get_field( 'port_image_four' );
                     <ul class="list-unstyled">
 
                         <?php
-                            $posttags = get_the_tags();
-                            if ($posttags) {
-                                foreach($posttags as $tag) {
-                                    echo $tag->name . ' '; 
+                            $postwebtags = get_the_terms( get_the_ID() , 'web_tags' );
+                            if ($postwebtags) {
+                                foreach($postwebtags as $webtag) {
+                                    echo $webtag->name . ' '; 
                                 }
                             }
                         ?>
