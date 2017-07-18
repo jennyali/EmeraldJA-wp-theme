@@ -2,7 +2,7 @@
 
 <?php
 /**
- * The template for the ABOUT PAGE
+ *
  *
  * 
  * @package EmeraldJA
@@ -76,7 +76,7 @@ get_header(); ?>
                 </div>
             </div><!-- .row -->
 
-            <? endwhile; ?>
+            <?php endwhile; ?>
 
         </section><!-- .container -->
 

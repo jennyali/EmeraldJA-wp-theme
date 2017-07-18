@@ -222,12 +222,12 @@ function portfolio_section_nav() {
 };
 
 // Add a classname to the_category()
-add_filter('the_category','add_class_to_category',10,3);
+/*add_filter('the_category','add_class_to_category',10,3);
 
 function add_class_to_category( $thelist, $separator, $parents){
     $class_to_add = 'category-style-change';
     return str_replace('<a href="', '<a class="' . $class_to_add . '" href="', $thelist);
-}
+}*/
 
 // Change the layout of the COMMENTS in comment.php
 function mytheme_comment($comment, $args, $depth) {
@@ -321,6 +321,22 @@ function new_subcategory_hierarchy() {
 
 add_filter( 'category_template', 'new_subcategory_hierarchy' );
 
+//# Finding out current template being used
+
+add_filter( 'template_include', 'var_template_include', 1000 );
+function var_template_include( $t ){
+    $GLOBALS['current_theme_template'] = basename($t);
+    return $t;
+}
+
+function get_current_template( $echo = false ) {
+    if( !isset( $GLOBALS['current_theme_template'] ) )
+        return false;
+    if( $echo )
+        echo $GLOBALS['current_theme_template'];
+    else
+        return $GLOBALS['current_theme_template'];
+}
 
 //----------- AJAX CALLS -------------------//
 

@@ -49,7 +49,7 @@ get_header(); ?>
             <!-- SIDEBAR - 'sidebar-blog-page'
             ======================================================================-->
 
-                <?php dynamic_sidebar( 'sidebar-blog-page' ); ?>
+                <?php get_sidebar(); ?>
 
             </div><!-- .col -->
         </div><!-- .row -->

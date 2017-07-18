@@ -14,7 +14,18 @@
 <div class="masonry-layout__panel">
     <div class="portfolio-item masonry-layout__panel-content">
 
-        <img src="<?php the_post_thumbnail_url(); ?>" class="img-responsive">
+    <?php $post_image = get_the_post_thumbnail_url(); ?>
+
+        <?php if( $post_image == false ): ?>
+
+            <img src="http://localhost/wordpress/wp-content/uploads/2017/07/green-image-2.jpeg" class="img-responsive">
+            
+        <?php else: ?>
+
+            <img src="<?php the_post_thumbnail_url(); ?>" class="img-responsive">
+
+        <?php endif; ?>
+
 
         <div class="portfolio-item__overlay">
             <a href="<?php echo get_permalink(); ?>">
