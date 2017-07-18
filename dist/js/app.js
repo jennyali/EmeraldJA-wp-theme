@@ -10360,8 +10360,8 @@ __webpack_require__(3);
     //require('./slickSlider.js'); NOTE: can only get the script to work in the main app.js file.
 
     /*========================================
-                     VIEW
-     ==========================================*/
+                      VIEW
+      ==========================================*/
 
     var singPortPostSlickSlider = $('.single-portflio-post__slick-silder');
     var $slickPrevArrow = $('.slick-prev');
@@ -10405,8 +10405,8 @@ __webpack_require__(3);
     });
 
     /*========================================
-                     CONTROLLER
-     ==========================================*/
+                      CONTROLLER
+      ==========================================*/
 
     //# to change the default slick slider buttons with text to no text and arrow icons.
     function changeSlickArrow(selector, classname) {
@@ -10484,9 +10484,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 //# Selectors
 
-var headerMenuBtn = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#header-menu-btn');
-var headerMenu = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#header-menu');
-var body = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('body');
+var headerMenuBtn = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#header-menu-btn');
+var headerMenu = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#header-menu');
+var body = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('body');
 
 //# Events
 
@@ -10539,7 +10539,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# scroll effect - pass in a jquery selector for param.
 
 function clickScroll(selector) {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('body').animate({
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').animate({
         scrollTop: selector.offset().top - 145
     }, 1000);
 }
@@ -10561,8 +10561,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 ==========================================*/
 
 //# Selectors
-var $homeHeroSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#home_hero');
-var $heroInnerTextBox = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.item__text-container__inner-box');
+var $homeHeroSection = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('#home_hero');
+var $heroInnerTextBox = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.item__text-container__inner-box');
 
 //# Events
 
@@ -10598,8 +10598,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 ==========================================*/
 
 //# Selectors
-var $carouselDots = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel-indicators li');
-var $carouselFirstItem = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.item:first-child.active');
+var $carouselDots = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.carousel-indicators li');
+var $carouselFirstItem = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.item:first-child.active');
 
 //# Events
 
@@ -10630,14 +10630,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var $portfolioSectionLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.portfolio-section .navbar li a');
-var $portfolioContainer = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.portfolio-container');
+var $portfolioSectionLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.portfolio-section .navbar li a');
+var $portfolioContainer = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.portfolio-container');
 
 $portfolioSectionLinks.on({
     'click': function click(e) {
         e.preventDefault();
 
-        var $category_name = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).text();
+        var $category_name = __WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).text();
 
         __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.ajax({
             url: ajaxportfolio.ajaxurl,
