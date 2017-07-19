@@ -9,10 +9,10 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container container--padding">
 	<div class="row">
 
-		<div id="primary" class="content-area col-sm-9">
+		<div id="primary" class="content-area page-content__wrapper col-sm-9">
 			<main id="main" class="site-main">
 
 			<?php
@@ -20,7 +20,7 @@ get_header(); ?>
 
 				<header class="page-header">
 					<?php
-						the_archive_title( '<h2 class="page-title">', '</h2>' );
+						the_archive_title( '<h5 class="page-title">', '</h5>' );
 						the_archive_description( '<div class="archive-description">', '</div>' );
 					?>
 				</header><!-- .page-header -->

@@ -132,6 +132,16 @@ function emerald_ja_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+		register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget Area', 'emerald_ja' ),
+		'id'            => 'sidebar-footer',
+		'description'   => esc_html__( 'Add widgets here.', 'emerald_ja' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'emerald_ja_widgets_init' );
 
@@ -221,13 +231,6 @@ function portfolio_section_nav() {
     );
 };
 
-// Add a classname to the_category()
-/*add_filter('the_category','add_class_to_category',10,3);
-
-function add_class_to_category( $thelist, $separator, $parents){
-    $class_to_add = 'category-style-change';
-    return str_replace('<a href="', '<a class="' . $class_to_add . '" href="', $thelist);
-}*/
 
 // Change the layout of the COMMENTS in comment.php
 function mytheme_comment($comment, $args, $depth) {

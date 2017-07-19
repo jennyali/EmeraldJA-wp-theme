@@ -1,7 +1,37 @@
 
+
 .footer__copyright {
-    color: $light;
+    color: $mid-grey;
     margin: 0;
     padding: $spacing-base;
     display: block;
+}
+
+.footer__widget-area {
+    //padding: $spacing-base;
+
+    .widget_meta {
+
+            h2 {
+                display: hidden;
+            }
+
+            li {
+                font-size: $font-size-base;
+                margin: 0;
+            }
+    }
+}
+
+footer {
+
+    .nav {
+
+        li {
+
+            @include mediaQ-min($bp-sm) {
+                float: right;
+            }
+        }
+    }
 }

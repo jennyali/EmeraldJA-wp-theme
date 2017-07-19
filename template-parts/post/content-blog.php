@@ -12,7 +12,21 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-blog-post' ); ?>>
 
-        <?php the_category(' '); ?>
+        <?php //the_category(' '); ?>
+
+		<?php 
+		
+			$post_cat = get_the_category(); 
+
+			//echo var_dump($post_cat);
+
+			foreach( $post_cat as $cat ) {
+				echo '<p class="btn btn-default btn-custom-4">' . $cat->name . '</p>';
+			}
+			
+		?>
+
+
 
         <?php the_title( '<h2>', '</h2>'); ?>
 
