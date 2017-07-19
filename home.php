@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-    <div class="container">
+    <div class="container container--padding">
         <div class="row">
             <div class="col-sm-9 page-content__wrapper">
 

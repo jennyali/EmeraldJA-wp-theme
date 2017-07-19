@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<main class="container page-content">
+	<main class="container container--padding page-content">
       <div class="row">
 
     <!-- CONTENT

@@ -1,0 +1,8 @@
+.post-type-archive-portfolio_post {
+    .page-header {
+
+        @include mediaQ-max($bp-sm) {
+            text-align: center;
+        }
+    }
+}

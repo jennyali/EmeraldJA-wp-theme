@@ -22,19 +22,20 @@
 
             <div class="row">
 
-                <p class="footer__copyright"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?> <?php the_author(); ?></p>
-
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><span>|</span></li>
-                    <li><a href="#">Terms of Use</a></li>
-                </ul><!-- .nav -->
-
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav col-sm-4 col-sm-push-8">
                     <li><a href="#"><span class="icon-facebook"></span></a></li>
                     <li><a href="#"><span class="icon-google-plus"></span></a></li>
                     <li><a href="#"><span class="icon-share-alt"></span></a></li>
                 </ul><!-- .navbar-right -->
+
+                <div class="col-sm-4 footer__widget-area">
+
+                    <?php dynamic_sidebar( 'sidebar-footer' ); ?>
+
+                </div><!-- .footer__widget-area -->
+
+                <p class="footer__copyright col-sm-4 col-sm-pull-8"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?> <?php the_author(); ?></p>
+
 
             </div><!-- .row -->
 

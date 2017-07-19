@@ -65,7 +65,5 @@
 		<?php endif; ?>
 
 		<div id="content" class="site-content">
-		<?php
-
-			echo get_current_template(); 
-		?>
+		
+		<?php //echo get_current_template(); ?>

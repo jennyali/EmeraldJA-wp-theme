@@ -9,12 +9,12 @@
 
 get_header(); ?>
 
-<div class="container page-content">
+<div class="container container--padding page-content">
 	<div class="row">
 
 		<!-- CONTENT
 		=============================================================================-->
-		<section id="primary" class="content-area col-sm-9">
+		<section id="primary" class="content-area col-sm-9 page-content__wrapper">
 			<main id="main" class="site-main">
 
 			<?php

@@ -1,6 +1,10 @@
 
 .pagination-wrapper {
-    padding-top: $spacing-base * 6;
+    padding-top: $spacing-base * 4;
+
+    @include mediaQ-min($bp-sm) {
+        padding-top: $spacing-base * 6;
+    }
 }
 
 .pagination {

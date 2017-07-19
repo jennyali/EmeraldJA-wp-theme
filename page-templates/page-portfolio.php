@@ -4,14 +4,12 @@
 
 <?php get_header(); ?>
 
-    <div class="container">
+    <div class="container container--padding">
         <main class="row">
 
             <!-- PORTFOLIO GALLERY
             =======================================================================-->
             <section class="col-sm-12">
-
-                <h2><?php the_title(); ?></h2>
 
                 <?php $args = array(
                     'taxonomy' => 'topics',
@@ -26,7 +24,7 @@
                     
                         foreach( $mytax as $tax ) { ?>
 
-                        <article class="col-sm-4 port-gallery__item">
+                        <article class="col-sm-6 col-md-4 port-gallery__item">
 
                             <?php 
                                 $taxonomy = $tax->taxonomy;
@@ -37,8 +35,10 @@
                             ?>
 
                                 <figure class="port-gallery__item__thumbnail">
-
-                                    <img src="<?php echo $test_category_image; ?>" class="img-responsive">
+                                    
+                                    <a href="<?php echo get_category_link($tax->term_id); ?>">
+                                        <img src="<?php echo $test_category_image; ?>" class="img-responsive">
+                                    </a>
 
                                 </figure><!-- .port-gallery__item__thumbnail -->
 
