@@ -1,5 +1,7 @@
 .single-portflio-post__title {
-    padding: ($spacing-base * 4) $spacing-base 0;
+    @include mediaQ-min($bp-sm) {
+        padding: ($spacing-base * 4) $spacing-base 0;
+    }
 }
 
 .single-portflio-post__content {

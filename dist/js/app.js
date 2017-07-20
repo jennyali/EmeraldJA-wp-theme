@@ -10356,6 +10356,9 @@ __webpack_require__(3);
     //# Portfolio Section Menu Ajax
     __webpack_require__(9);
 
+    //# Porfolio Section masonry panels
+    __webpack_require__(10);
+
     //# Sick Slider
     //require('./slickSlider.js'); NOTE: can only get the script to work in the main app.js file.
 
@@ -10633,6 +10636,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var $portfolioSectionLinks = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.portfolio-section .navbar li a');
 var $portfolioContainer = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.portfolio-container');
 
+var $masonryPanels = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.masonry-layout__panel');
+
 $portfolioSectionLinks.on({
     'click': function click(e) {
         e.preventDefault();
@@ -10656,6 +10661,44 @@ $portfolioSectionLinks.on({
         });
     }
 });
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+
+
+/*========================================
+
+                VIEW
+
+==========================================*/
+
+//# Selectors
+var $masonryPanels = __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.masonry-layout__panel');
+
+//# Events
+
+
+$masonryPanels.on({
+    load: function load() {
+        masonryPanelsHandler();
+        console.log('hello');
+    }
+});
+
+/*========================================
+
+                CONTROLLER
+
+==========================================*/
+function masonryPanelsHandler() {
+    $masonryPanels.addClass('fade-in');
+}
 
 /***/ })
 /******/ ]);
