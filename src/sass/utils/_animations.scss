@@ -29,6 +29,24 @@
     }
 }
 
+.masonry-layout__panel {
+    opacity: 0;
+    animation-name: fadeInItem;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+
+      @for $i from 1 through 6 {
+
+        &:nth-child(#{$i}) { 
+            animation-delay: (0.1s * $i); 
+
+
+      }
+    }
+};
+
+
 
 
 //# fade in carousel on .active class
@@ -44,3 +62,5 @@
     from { top: 70%; opacity: 0; }
     to { top: 50%; opacity: 1}
 }
+
+//# Animation for font page mansory panels on load fade in

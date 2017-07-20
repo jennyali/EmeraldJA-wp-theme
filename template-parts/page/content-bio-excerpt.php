@@ -35,7 +35,7 @@ $bio_excerpt_button_link        = get_field( 'bio_excerpt_button_link' );
 
                         <?php echo $bio_excerpt_content; ?>
 
-                        <button href="<?php echo $bio_excerpt_button_link; ?>" class="btn btn-default btn-clear"><?php echo $bio_excerpt_button_title; ?></button>
+                        <button href="<?php echo $bio_excerpt_button_link; ?>" class="btn-clear"><?php echo $bio_excerpt_button_title; ?><span class="icon-arrow-50"></span></button>
 
                     </div><!-- .bio-excerpt-section__text -->
                 </div><!-- .col -->

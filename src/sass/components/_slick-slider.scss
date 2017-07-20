@@ -5,7 +5,8 @@
 .single-portflio-post__slider-main {
     .slick-slide {
         opacity: 0.8;
-        transition: opacity 0.5s;
+        transition: opacity 0.5s 0.5s;
+        height: auto;
     }
 
     .slick-current {
@@ -28,7 +29,6 @@
 
 .slick-slider__slide {
     max-width: 500px;
-    height: auto;
 
         @include mediaQ-min($bp-sm) {
             max-width: 600px;

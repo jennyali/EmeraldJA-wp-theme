@@ -22,10 +22,12 @@
         }
     }
 
-    input {
+    input,
+    textarea {
         color: $light;
         font-weight: normal;
         letter-spacing: 1px;
+        font-family: $font-family-paragraph;
     }
 
     label {
@@ -33,6 +35,11 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         line-height: 2;
+    }
+
+    .btn-custom-4 {
+        font-weight: bold;
+        text-transform: uppercase;
     }
     
     .contact-form__container__small-columns {

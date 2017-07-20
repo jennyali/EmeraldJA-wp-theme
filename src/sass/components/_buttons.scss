@@ -29,6 +29,34 @@
     font-size: $font-size-md;
     text-transform: uppercase;
     font-weight: 600;
+    border-radius: 0;
+    transition: color 0.3s;
+
+        &:hover {
+            color: $primary-color;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: transparent;
+            outline: transparent;
+            border: none;
+        }
+
+        span {
+            font-size: 13px;
+            margin-left: 5px;
+        }
+
+        .btn-default:active:hover, .blog-post__categories .category-style-change:active:hover, .btn-default:active:focus, .blog-post__categories .category-style-change:active:focus, .btn-default:active.focus, .blog-post__categories .category-style-change:active.focus, .btn-default.active:hover, .blog-post__categories .active.category-style-change:hover, .btn-default.active:focus, .blog-post__categories .active.category-style-change:focus, .btn-default.active.focus, .blog-post__categories .active.focus.category-style-change, .open > .btn-default.dropdown-toggle:hover, .blog-post__categories
+        .open > .dropdown-toggle.category-style-change:hover, .open > .btn-default.dropdown-toggle:focus, .blog-post__categories
+        .open > .dropdown-toggle.category-style-change:focus, .open > .btn-default.dropdown-toggle.focus, .blog-post__categories
+        .open > .dropdown-toggle.focus.category-style-change {
+            background: transparent;
+            outline: transparent;
+            border: none;
+    }
 }
 
 //-----------------------------------------
@@ -87,6 +115,8 @@
     transition: all 0.5s;
     font-size: $font-size-sm;
     letter-spacing: 1px;
+    border: none;
+    outline: transparent;
 
         @include mediaQ-max($bp-sm) {
            padding: $spacing-sm $spacing-lg;

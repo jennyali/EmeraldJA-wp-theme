@@ -12,16 +12,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-blog-post' ); ?>>
 
-        <?php //the_category(' '); ?>
-
 		<?php 
 		
-			$post_cat = get_the_category(); 
-
-			//echo var_dump($post_cat);
+			$post_cat = get_the_category();
 
 			foreach( $post_cat as $cat ) {
-				echo '<p class="btn btn-default btn-custom-4">' . $cat->name . '</p>';
+
+				$post_cat_id = $cat->cat_ID;
+				$cat_link = get_category_link( $post_cat_id ); 
+
+				echo '<a href="' . $cat_link . '" class="btn btn-default btn-custom-4">' . $cat->name . '</a>';
 			}
 			
 		?>
@@ -49,7 +49,7 @@
 
 <?php else : // FOR home.php page ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'row blog-post' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post' ); ?>>
 
 	<figure class="blog-post__thumbnail">
 
@@ -61,7 +61,19 @@
 
 		<div class="blog-post__categories">
 
-            <?php the_category(' '); ?>
+			<?php 
+			
+				$post_cat = get_the_category();
+
+				foreach( $post_cat as $cat ) {
+
+					$post_cat_id = $cat->cat_ID;
+					$cat_link = get_category_link( $post_cat_id ); 
+
+					echo '<a href="' . $cat_link . '" class="btn btn-default btn-custom-4">' . $cat->name . '</a>';
+				}
+				
+			?>
 
 		</div><!-- .blog-post__categories -->
 

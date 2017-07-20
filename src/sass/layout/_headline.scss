@@ -10,11 +10,16 @@
     border-top: 1px solid $light-grey;
 
 
-    hr {
-        margin: 0;
-        border-top: 3px solid $dark;
-        width: 70px;
-        position: absolute;
-        top: -2px;
-    }
+        hr {
+            margin: 0;
+            border-top: 3px solid $dark;
+            width: 70px;
+            position: absolute;
+            top: -2px;
+
+                @include mediaQ-max($bp-sm) {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+        }
 }

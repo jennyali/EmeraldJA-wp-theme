@@ -5955,6 +5955,25 @@ button.close {
   right: 0px;
   opacity: 1; }
 
+.masonry-layout__panel {
+  opacity: 0;
+  animation-name: fadeInItem;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out; }
+  .masonry-layout__panel:nth-child(1) {
+    animation-delay: 0.1s; }
+  .masonry-layout__panel:nth-child(2) {
+    animation-delay: 0.2s; }
+  .masonry-layout__panel:nth-child(3) {
+    animation-delay: 0.3s; }
+  .masonry-layout__panel:nth-child(4) {
+    animation-delay: 0.4s; }
+  .masonry-layout__panel:nth-child(5) {
+    animation-delay: 0.5s; }
+  .masonry-layout__panel:nth-child(6) {
+    animation-delay: 0.6s; }
+
 @keyframes fadeInItem {
   from {
     opacity: 0; }
@@ -6016,7 +6035,7 @@ button.close {
       position: relative;
       display: block;
       margin: 0 0 15px; } }
-  .blog-post__categories button, .portfolio-post__categories button {
+  .blog-post__categories a, .portfolio-post__categories a {
     margin-right: 10px; }
 
 .blog-post__header h4, .portfolio-post__header h4 {
@@ -6392,7 +6411,22 @@ a:link {
   border: none;
   font-size: 18px;
   text-transform: uppercase;
-  font-weight: 600; }
+  font-weight: 600;
+  border-radius: 0;
+  transition: color 0.3s; }
+  .btn-clear:hover {
+    color: #06D6A0; }
+  .btn-clear:hover, .btn-clear:focus, .btn-clear:active {
+    background: transparent;
+    outline: transparent;
+    border: none; }
+  .btn-clear span {
+    font-size: 13px;
+    margin-left: 5px; }
+  .btn-clear .btn-default:active:hover, .btn-clear .blog-post__categories .category-style-change:active:hover, .blog-post__categories .btn-clear .category-style-change:active:hover, .btn-clear .blog-post__categories .category-style-change:active:hover, .btn-clear .btn-default:active:focus, .btn-clear .blog-post__categories .category-style-change:active:focus, .blog-post__categories .btn-clear .category-style-change:active:focus, .btn-clear .blog-post__categories .category-style-change:active:focus, .btn-clear .btn-default:active.focus, .btn-clear .blog-post__categories .category-style-change:active.focus, .blog-post__categories .btn-clear .category-style-change:active.focus, .btn-clear .blog-post__categories .category-style-change:active.focus, .btn-clear .btn-default.active:hover, .btn-clear .blog-post__categories .active.category-style-change:hover, .blog-post__categories .btn-clear .active.category-style-change:hover, .btn-clear .blog-post__categories .active.category-style-change:hover, .btn-clear .btn-default.active:focus, .btn-clear .blog-post__categories .active.category-style-change:focus, .blog-post__categories .btn-clear .active.category-style-change:focus, .btn-clear .blog-post__categories .active.category-style-change:focus, .btn-clear .btn-default.active.focus, .btn-clear .blog-post__categories .active.focus.category-style-change, .blog-post__categories .btn-clear .active.focus.category-style-change, .btn-clear .blog-post__categories .active.focus.category-style-change, .btn-clear .open > .btn-default.dropdown-toggle:hover, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:hover, .blog-post__categories .btn-clear .open > .dropdown-toggle.category-style-change:hover, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:hover, .btn-clear .open > .btn-default.dropdown-toggle:focus, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:focus, .blog-post__categories .btn-clear .open > .dropdown-toggle.category-style-change:focus, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:focus, .btn-clear .open > .btn-default.dropdown-toggle.focus, .btn-clear .blog-post__categories .open > .dropdown-toggle.focus.category-style-change, .blog-post__categories .btn-clear .open > .dropdown-toggle.focus.category-style-change, .btn-clear .blog-post__categories .open > .dropdown-toggle.focus.category-style-change {
+    background: transparent;
+    outline: transparent;
+    border: none; }
 
 .btn-custom-2 {
   border-radius: 100%;
@@ -6425,7 +6459,9 @@ a:link {
   border-radius: 0;
   transition: all 0.5s;
   font-size: 14px;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  border: none;
+  outline: transparent; }
   @media (max-width: 767px) {
     .btn-custom-4, .form-custom-3 .btn, .blog-post__categories .category-style-change, #respond #submit {
       padding: 10px 20px;
@@ -6524,15 +6560,20 @@ a:link {
     box-shadow: inset 0px 1px 5px -1px rgba(0, 0, 0, 0.3); }
     .form-custom-1 .form-control:focus {
       border-bottom: 2px solid #ff1f79; }
-  .form-custom-1 input {
+  .form-custom-1 input,
+  .form-custom-1 textarea {
     color: #FFFFFF;
     font-weight: normal;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    font-family: Poppins, sans-serif; }
   .form-custom-1 label {
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 2; }
+  .form-custom-1 .btn-custom-4, .form-custom-1 .form-custom-3 .btn, .form-custom-3 .form-custom-1 .btn, .form-custom-1 .blog-post__categories .category-style-change, .blog-post__categories .form-custom-1 .category-style-change, .form-custom-1 #respond #submit, #respond .form-custom-1 #submit {
+    font-weight: bold;
+    text-transform: uppercase; }
   @media (min-width: 767px) {
     .form-custom-1 .contact-form__container__small-columns {
       display: flex;
@@ -6667,7 +6708,8 @@ a:link {
 
 .single-portflio-post__slider-main .slick-slide {
   opacity: 0.8;
-  transition: opacity 0.5s; }
+  transition: opacity 0.5s 0.5s;
+  height: auto; }
 
 .single-portflio-post__slider-main .slick-current {
   opacity: 1; }
@@ -6683,8 +6725,7 @@ a:link {
     outline: transparent; }
 
 .slick-slider__slide {
-  max-width: 500px;
-  height: auto; }
+  max-width: 500px; }
   @media (min-width: 767px) {
     .slick-slider__slide {
       max-width: 600px; } }
@@ -6920,37 +6961,40 @@ a:link {
 /*
     This form is seen when using wordpress's get_search_form() tag.
 */
-.search-form .search-field {
-  background: #f6f6f6;
-  border: 1px solid #a2a2a2;
-  box-shadow: none;
-  padding: 0 15px;
-  font-weight: 300;
-  height: 50px;
-  border-radius: 0;
-  border: none;
-  border-bottom: 2px solid #06D6A0;
-  transition: border-bottom 0.2s;
-  outline: transparent; }
-  .search-form .search-field:focus {
-    border-bottom: 2px solid #ff1f79; }
-
-.search-form .search-submit {
-  padding: 15px;
-  height: 50px;
-  color: #222;
-  background: #f6f6f6;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-  border-bottom: 2px solid #06D6A0;
-  outline: transparent;
-  transition: color 0.25s;
-  position: relative;
-  right: 5px; }
-  .search-form .search-submit:hover, .search-form .search-submit:focus, .search-form .search-submit:active {
-    color: #ff1f79;
-    border-bottom: 2px solid #ff1f79; }
+.search-form {
+  position: relative; }
+  .search-form .search-field {
+    background: #f6f6f6;
+    border: 1px solid #a2a2a2;
+    box-shadow: none;
+    padding: 0 15px;
+    font-weight: 300;
+    height: 50px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid #06D6A0;
+    transition: border-bottom 0.2s;
+    outline: transparent;
+    width: 100%; }
+    .search-form .search-field:focus {
+      border-bottom: 2px solid #ff1f79; }
+  .search-form .search-submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    height: 50px;
+    color: #222;
+    background: #f6f6f6;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #06D6A0;
+    outline: transparent;
+    transition: color 0.25s; }
+    .search-form .search-submit:hover, .search-form .search-submit:focus, .search-form .search-submit:active {
+      color: #ff1f79;
+      border-bottom: 2px solid #ff1f79; }
 
 @media (max-width: 767px) {
   .headline {
@@ -6965,6 +7009,10 @@ a:link {
     width: 70px;
     position: absolute;
     top: -2px; }
+    @media (max-width: 767px) {
+      .headline__divider hr {
+        left: 50%;
+        transform: translateX(-50%); } }
 
 /*
     # DEFAULT MASONRY LAYOUT
@@ -7270,8 +7318,9 @@ a:link {
 .category-gallery__item {
   margin: 30px 15px; }
 
-.single-portflio-post__title {
-  padding: 60px 15px 0; }
+@media (min-width: 767px) {
+  .single-portflio-post__title {
+    padding: 60px 15px 0; } }
 
 .single-portflio-post__content {
   margin: 30px 0; }

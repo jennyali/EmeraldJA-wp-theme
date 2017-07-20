@@ -4,6 +4,7 @@
 */
 
 .search-form {
+    position: relative;
 
     .search-field {
         background: $light-grey;
@@ -17,6 +18,7 @@
         border-bottom: 2px solid $primary-color;
         transition: border-bottom 0.2s;
         outline: transparent;
+        width: 100%;
 
             &:focus {
                 border-bottom: 2px solid $secondary-color;
@@ -24,6 +26,9 @@
     }
 
     .search-submit {
+        position: absolute;
+        top: 0;
+        right: 0;
         padding: $spacing-base;
         height: 50px;
         color: $dark;
@@ -34,8 +39,7 @@
         border-bottom: 2px solid $primary-color;
         outline: transparent;
         transition: color 0.25s;
-        position: relative;
-        right: 5px;
+
 
             &:hover,
             &:focus,

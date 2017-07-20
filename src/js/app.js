@@ -21,6 +21,9 @@ require('../sass/styles.scss');
     //# Portfolio Section Menu Ajax
     require('./portSectionMenuAjax.js');
 
+    //# Porfolio Section masonry panels
+    require('./masonryPanels.js');
+
 
     //# Sick Slider
     //require('./slickSlider.js'); NOTE: can only get the script to work in the main app.js file.

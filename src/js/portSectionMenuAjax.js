@@ -5,6 +5,8 @@ import $ from 'jquery';
 var $portfolioSectionLinks = $('.portfolio-section .navbar li a');
 var $portfolioContainer = $('.portfolio-container');
 
+var $masonryPanels = $('.masonry-layout__panel');
+
 $portfolioSectionLinks.on({
     'click' : function(e) {
         e.preventDefault();
@@ -29,4 +31,4 @@ $portfolioSectionLinks.on({
         })
     }
 })
-    
+  
