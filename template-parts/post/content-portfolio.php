@@ -38,41 +38,43 @@ $port_image_four = get_field( 'port_image_four' );
     <!-- SLIDER
     ======================================================================-->
     <div class="slick-slider-wrapper">
-    <div class="container-fluid">
-        <div class="row single-portflio-post__slider">
-                        
-            <div class="single-portflio-post__slider-main center">
-    
-                    <img class="slick-slider__slide" src="<?php echo $port_image_one['url']; ?>" alt="green object">
 
-                    <img class="slick-slider__slide" src="<?php echo $port_image_two['url']; ?>" alt="green object">
+        <div class="container-fluid">
+            <div class="row single-portflio-post__slider">
+                            
+                <div class="single-portflio-post__slider-main center">
+        
+                        <img class="slick-slider__slide" src="<?php echo $port_image_one['url']; ?>" alt="green object">
 
-                    <img class="slick-slider__slide" src="<?php echo $port_image_three['url']; ?>" alt="green object">
+                        <img class="slick-slider__slide" src="<?php echo $port_image_two['url']; ?>" alt="green object">
 
-                    <img class="slick-slider__slide"src="<?php echo $port_image_four['url']; ?>" alt="green object">
+                        <img class="slick-slider__slide" src="<?php echo $port_image_three['url']; ?>" alt="green object">
 
-            </div><!-- .column -->
+                        <img class="slick-slider__slide"src="<?php echo $port_image_four['url']; ?>" alt="green object">
 
-        </div><!-- .row -->
-    </div><!-- .container-fluid -->
+                </div><!-- .column -->
 
-    <div class="container single-portflio-post__slider-nav hidden-xs">
-        <div class="row single-portflio-post__slider">
-                        
-            <div class="single-portflio-post__slick-silder slider-nav">
-    
-                    <img class="slick-slider__slide" src="<?php echo $port_image_one['url']; ?>" alt="green object">
+            </div><!-- .row -->
+        </div><!-- .container-fluid -->
 
-                    <img class="slick-slider__slide" src="<?php echo $port_image_two['url']; ?>" alt="green object">
+        <div class="container single-portflio-post__slider-nav hidden-xs">
+            <div class="row single-portflio-post__slider">
+                            
+                <div class="single-portflio-post__slick-silder slider-nav">
+        
+                        <img class="slick-slider__slide" src="<?php echo $port_image_one['url']; ?>" alt="green object">
 
-                    <img class="slick-slider__slide" src="<?php echo $port_image_three['url']; ?>" alt="green object">
+                        <img class="slick-slider__slide" src="<?php echo $port_image_two['url']; ?>" alt="green object">
 
-                    <img class="slick-slider__slide"src="<?php echo $port_image_four['url']; ?>" alt="green object">
+                        <img class="slick-slider__slide" src="<?php echo $port_image_three['url']; ?>" alt="green object">
 
-            </div><!-- .column -->
+                        <img class="slick-slider__slide"src="<?php echo $port_image_four['url']; ?>" alt="green object">
 
-        </div><!-- .row -->
-    </div><!-- .container -->
+                </div><!-- .column -->
+
+            </div><!-- .row -->
+        </div><!-- .container -->
+        
     </div><!-- .slick-slider-wrapper -->
     
 
@@ -92,7 +94,7 @@ $port_image_four = get_field( 'port_image_four' );
                         </a>
                     </div><!-- .category-gallery__item__overlay -->
 
-                </figure>
+                </figure><!-- .portfolio-item -->
 
                 <figcaption class="single-portflio-post__content__figcaption">
                     <h4>Project Details</h4>
@@ -113,11 +115,9 @@ $port_image_four = get_field( 'port_image_four' );
                         ?>
 
                     </ul>
-                </figcaption>
+                </figcaption><!-- .single-portflio-post__content__figcaption -->
 
-
-
-            </div>
+            </div><!-- .col -->
 
             <div class="col-md-8">
                 <p class="single-porfolio-post__content__text">
@@ -125,9 +125,10 @@ $port_image_four = get_field( 'port_image_four' );
                     <?php the_content(); ?>
 
                 </p>
-            </div>
-            
+            </div><!-- .col -->   
+
         </div><!-- .row -->
+
     </div><!-- .container -->
 
     <?php else : ?>

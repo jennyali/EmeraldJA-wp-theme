@@ -2,8 +2,6 @@
 /**
  * The template for displaying search results pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
  * @package EmeraldJA
  */
 
@@ -20,6 +18,8 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : ?>
 
+				<!-- PAGE HEADER
+                ============================================================================-->
 				<header class="page-header">
 					<h5 class="page-title"><?php
 						/* translators: %s: search query. */
@@ -27,32 +27,29 @@ get_header(); ?>
 					?></h5>
 				</header><!-- .page-header -->
 
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
 
-					/**
-					* Run the loop for the search to output the results.
-					* If you want to overload this in a child theme then include a file
-					* called content-search.php and that will be used instead.
-					*/
+				<!-- POSTS LOOP
+                ============================================================================-->
+
+				<?php while ( have_posts() ) : the_post();
+
 					get_template_part( 'template-parts/content', 'search' );
 
 				endwhile; ?>
 
-					<!-- PAGINATION
-                    ============================================================================-->
+				<!-- PAGINATION
+                ============================================================================-->
 
-                    <div class="pagination-wrapper">
+                <div class="pagination-wrapper">
 
-                        <?php the_posts_pagination( array(
-                                'mid_size'  => 2,
-                                'prev_text' => __( '&#x000AB; Previous', 'textdomain' ),
-                                'next_text' => __( 'Next &#x000BB;', 'textdomain' ),
-                            ) ); 
-                        ?>
+                    <?php the_posts_pagination( array(
+                            'mid_size'  => 2,
+                            'prev_text' => __( '&#x000AB; Previous', 'textdomain' ),
+                            'next_text' => __( 'Next &#x000BB;', 'textdomain' ),
+                        ) ); 
+                    ?>
                             
-                    </div><!-- .col -->
+                </div><!-- .col -->
 
 			<?php else :
 
@@ -69,7 +66,7 @@ get_header(); ?>
 
 			<?php get_sidebar(); ?>
 
-		<aside class="col-sm-3">
+		</aside><!-- .col -->
 
 	</div><!-- .row -->
 </div><!-- .container -->

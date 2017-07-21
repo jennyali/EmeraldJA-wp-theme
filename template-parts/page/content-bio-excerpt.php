@@ -13,14 +13,21 @@ $bio_excerpt_button_link        = get_field( 'bio_excerpt_button_link' );
 ?>
 
     <section id="home-bio-excerpt" class="bio-excerpt-section" data-scroll="in-view-animation" >
+        
         <div class="container">
+
             <div class="row">
 
+                <!-- IMAGE
+    		    =======================================================================-->
                 <div class="col-sm-6 column">
                     <img src="<?php echo $bio_excerpt_background_image['url']; ?>" alt="<?php echo $bio_excerpt_background_image['alt']; ?>" class="img-responsive">
                 </div><!-- .col -->
 
                 <div class="col-sm-6 column">
+
+                    <!-- TITLE
+    		        =======================================================================-->
                     <div class="headline">
 
                         <h2><?php echo $bio_excerpt_title; ?></h2>
@@ -31,6 +38,8 @@ $bio_excerpt_button_link        = get_field( 'bio_excerpt_button_link' );
 
                     </div><!-- .headline -->
 
+                    <!-- TEXT
+    		        =======================================================================-->
                     <div class="bio-excerpt-section__text">
 
                         <?php echo $bio_excerpt_content; ?>
@@ -41,5 +50,7 @@ $bio_excerpt_button_link        = get_field( 'bio_excerpt_button_link' );
                 </div><!-- .col -->
 
             </div><!-- .row -->
+
         </div><!-- .container -->
+
     </section><!-- .bio-excerpt-section -->
