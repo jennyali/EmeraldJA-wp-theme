@@ -3,6 +3,7 @@
 /*
         BLURB SECTION    
 */
+
 //# CUSTOM FIELDS UI
 $blurb_section_title        = get_field( 'blurb_section_title' );
 $blurb_section_lead_text = get_field( 'blurb_section_lead_text' );
@@ -10,8 +11,11 @@ $blurb_section_lead_text = get_field( 'blurb_section_lead_text' );
 ?>
 
     <section id="home_features" class="features-section">
+
         <div class="container">
 
+            <!-- SECTION HEADLINE
+    		=======================================================================-->
             <div class="row">
                 <div class="col-sm-12 headline">
 
@@ -26,6 +30,8 @@ $blurb_section_lead_text = get_field( 'blurb_section_lead_text' );
                 </div><!-- .headline -->
             </div><!-- .row -->
 
+            <!-- SECTION CONTENT
+    		=======================================================================-->
             <div class="row blurb-container">
 
                     <?php //+++     QUERY FOR DISPLAY BLURB POSTS   +++//
@@ -56,4 +62,5 @@ $blurb_section_lead_text = get_field( 'blurb_section_lead_text' );
             </div><!-- .row -->
 
         </div><!-- .container -->
+
     </section><!-- #home_features .features-section -->

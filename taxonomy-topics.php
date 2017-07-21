@@ -10,23 +10,21 @@ get_header(); ?>
 
 <div class="container container--padding">
 
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
 			<?php
 			if ( have_posts() ) : ?>
 
-            <!-- CATEGORY HEADER
+            <!-- TOPIC HEADER
             ============================================================================-->
             <div class="row">
 
 				<header class="headline category-caption col-sm-12">
 
-
                     <h1><?php echo single_cat_title(); ?></h1>
 
 					<?php
-						//the_archive_title( '<h2 class="page-title">', '</h2>' );
 						the_archive_description( '<div class="archive-description">', '</div>' );
 					?>
 
@@ -38,19 +36,14 @@ get_header(); ?>
             
             </div><!-- .row -->
 
-            <!-- CATEGORY GALLERY - subcategories of 'Portfolio'
+            <!-- TOPICS GALLERY
             ============================================================================-->
             <div class="row category-gallery">
 
                  <?php
                     $queried_object = get_queried_object();
-                    //var_dump( $queried_object );
-
                     $current_term = $queried_object->slug;
 
-                ?>
-
-                <?php 
                     $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
                     $args = array(
@@ -77,23 +70,23 @@ get_header(); ?>
 
                             <?php get_template_part( 'template-parts/post/content-portfolio', get_post_format() ); ?>
 
-                        </div>
+                        </div><!-- .col -->
 
                     <?php endwhile; wp_reset_query(); ?>
 
                     <!-- PAGINATION
                     ============================================================================-->
 
-                        <div class="col-sm-12">
+                    <div class="col-sm-12">
 
-                            <?php the_posts_pagination( array(
-                                    'mid_size'  => 2,
-                                    'prev_text' => __( '&#x000AB; Previous', 'textdomain' ),
-                                    'next_text' => __( 'Next &#x000BB;', 'textdomain' ),
-                                ) ); 
-                            ?>
+                        <?php the_posts_pagination( array(
+                                'mid_size'  => 2,
+                                'prev_text' => __( '&#x000AB; Previous', 'textdomain' ),
+                                'next_text' => __( 'Next &#x000BB;', 'textdomain' ),
+                            ) ); 
+                        ?>
                             
-                        </div><!-- .col -->
+                    </div><!-- .col -->
 
 			<?php else :
 
@@ -103,8 +96,8 @@ get_header(); ?>
 
             </div><!-- .row -->
 
-			</main><!-- #main -->
-		</div><!-- #primary .col -->
+		</main><!-- #main -->
+	</div><!-- #primary .col -->
 
 </div><!-- .container -->
 

@@ -10,10 +10,12 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
 //====================================================================================//
 ?>   
    
-   
     <section id="home_portfolio" class="portfolio-section">
+
         <div class="container">
 
+            <!-- SECTION HEADER
+            ====================================================================-->   
             <div class="row">
                 <div class="col-sm-12 headline">
 
@@ -27,19 +29,23 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
 
                     <div class="page__divider">
                         <hr>
-                    </div>
+                    </div><!-- .page__divider -->
 
                 </div><!-- .headline -->
             </div><!-- .row -->
 
             <div class="row">
 
+                <!-- NAVIGATION
+                ====================================================================-->   
                 <div class="col-sm-12">
 
                     <?php get_template_part( 'template-parts/navigation/navigation', 'portfolio-section-menu' ); ?>
 
                 </div><!-- .col -->
 
+                <!-- GALLERY - images/links
+                ====================================================================-->   
                 <div class="col-sm-12 portfolio-container masonry-layout">
 
                     <?php //+++     QUERY TO OBTAIN PANELS      +++//
@@ -71,9 +77,10 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
 
                         <?php endif; wp_reset_query(); ?>
                 
-                </div><!-- .portfolio-container -->
+                </div><!-- .portfolio-container .col -->
 
             </div><!-- .row -->
 
         </div><!-- .container -->
+
     </section><!-- #home_portfolio -->

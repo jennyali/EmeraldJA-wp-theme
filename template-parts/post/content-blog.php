@@ -8,7 +8,12 @@
 
 ?>
 
-<?php if( is_singular() ) : // FOR single.php page ?>
+<?php if( is_singular() ) : 
+
+	/* 
+		FOR single.php page
+	*/ 
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-blog-post' ); ?>>
 
@@ -47,7 +52,13 @@
 </article><!-- .single-blog-post -->
 
 
-<?php else : // FOR home.php page ?>
+<?php else : 
+
+	/* 
+		FOR home.php page
+	*/ 
+
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post' ); ?>>
 

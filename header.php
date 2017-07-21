@@ -59,8 +59,8 @@
 					');
 					}
 				?>
-			</div>
-		</section>
+			</div><!-- .breadcrumb .container -->
+		</section><!-- .breadcrumbs-section -->
 
 		<?php endif; ?>
 
