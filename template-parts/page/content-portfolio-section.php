@@ -25,7 +25,7 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
 
                     <?php endif; ?>
 
-                    <div class="headline__divider">
+                    <div class="page__divider">
                         <hr>
                     </div>
 

@@ -49,10 +49,24 @@
             margin-left: 5px;
         }
 
-        .btn-default:active:hover, .blog-post__categories .category-style-change:active:hover, .btn-default:active:focus, .blog-post__categories .category-style-change:active:focus, .btn-default:active.focus, .blog-post__categories .category-style-change:active.focus, .btn-default.active:hover, .blog-post__categories .active.category-style-change:hover, .btn-default.active:focus, .blog-post__categories .active.category-style-change:focus, .btn-default.active.focus, .blog-post__categories .active.focus.category-style-change, .open > .btn-default.dropdown-toggle:hover, .blog-post__categories
-        .open > .dropdown-toggle.category-style-change:hover, .open > .btn-default.dropdown-toggle:focus, .blog-post__categories
-        .open > .dropdown-toggle.category-style-change:focus, .open > .btn-default.dropdown-toggle.focus, .blog-post__categories
-        .open > .dropdown-toggle.focus.category-style-change {
+        .btn-default:active:hover, 
+        .blog-post__categories .category-style-change:active:hover, 
+        .btn-default:active:focus, 
+        .blog-post__categories .category-style-change:active:focus, 
+        .btn-default:active.focus, 
+        .blog-post__categories .category-style-change:active.focus, 
+        .btn-default.active:hover, 
+        .blog-post__categories .active.category-style-change:hover, 
+        .btn-default.active:focus, 
+        .blog-post__categories .active.category-style-change:focus, 
+        .btn-default.active.focus, 
+        .blog-post__categories .active.focus.category-style-change, 
+        .open > .btn-default.dropdown-toggle:hover, 
+        .blog-post__categories .open > .dropdown-toggle.category-style-change:hover, 
+        .open > .btn-default.dropdown-toggle:focus, 
+        .blog-post__categories .open > .dropdown-toggle.category-style-change:focus, 
+        .open > .btn-default.dropdown-toggle.focus, 
+        .blog-post__categories .open > .dropdown-toggle.focus.category-style-change {
             background: transparent;
             outline: transparent;
             border: none;
@@ -83,7 +97,7 @@
     border: 1px solid $light;
     border-radius: 100%;
     padding: 6px 5px 3px 8px;
-    margin-left: 15px;
+    margin-left: $spacing-base;
     font-size: $font-size-base;
     transition: all 0.25s;
 
@@ -95,7 +109,6 @@
 }
 
 .btn-custom-3--alt {
-    //padding: 8px 9px 4px 13px; // arrow icon
     padding: 8px 12px 5px 12px;  // magnifying glass icon
 }
 
@@ -109,8 +122,6 @@
     border-color: $primary-color;
     font-weight: bold;
     color: $light;
-    //letter-spacing: 1.5px;
-    //font-size: $font-size-base;
     border-radius: 0;
     transition: all 0.5s;
     font-size: $font-size-sm;
@@ -140,7 +151,7 @@
     color: $light;
     border: none;
     border-radius: 100%;
-    font-size: 16px;
+    font-size: $font-size-base;
     width: 58px;
     height: 58px;
     padding-top: 6px;

@@ -1,4 +1,6 @@
-.features-container {
+
+//# Blurb Section Blocks
+.blurb-container {
     margin: ($spacing-base * 4) 0;
     background: $light-grey;
 
@@ -7,7 +9,7 @@
     }
 }
 
-.feature__content {
+.blurb__content {
     text-align: center;
     padding: ($spacing-lg * 2) $spacing-lg $spacing-lg $spacing-lg;
     margin-bottom: $spacing-base * 2;
@@ -17,11 +19,11 @@
             padding: $spacing-lg;
         }
 
-    img {
-        max-width: 90px;
+        img {
+            max-width: 90px;
 
-            @include mediaQ-min($bp-md) {
-                max-width: 120px;
+                @include mediaQ-min($bp-md) {
+                    max-width: 120px;
+            }
         }
-    }
 }

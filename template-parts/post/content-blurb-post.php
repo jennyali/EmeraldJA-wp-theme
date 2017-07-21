@@ -13,7 +13,7 @@ $blurb_text     = get_field( 'blurb_text' );
 ?>
 
 <div class="col-sm-4 feature">
-    <div class="feature__content">
+    <div class="blurb__content">
 
         <img src="<?php echo $blurb_image['url']; ?>" alt="<?php echo $blurb_image['alt']; ?>">
 
@@ -21,5 +21,5 @@ $blurb_text     = get_field( 'blurb_text' );
 
         <p><?php echo $blurb_text; ?></p>
 
-    </div><!-- .feature__content -->
+    </div><!-- .blurb__content -->
 </div><!-- .col .feature -->

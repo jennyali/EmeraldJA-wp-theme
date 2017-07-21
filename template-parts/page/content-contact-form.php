@@ -22,7 +22,7 @@ $contact_form_7_shortcode   = get_field( 'contact_form_7_shortcode' );
 
                     <h2><?php echo $contact_form_title; ?></h2>
 
-                    <div class="headline__divider hidden-xs">
+                    <div class="page__divider hidden-xs">
                         <hr>
                     </div>
 

@@ -25,7 +25,7 @@ $bio_excerpt_button_link        = get_field( 'bio_excerpt_button_link' );
 
                         <h2><?php echo $bio_excerpt_title; ?></h2>
 
-                        <div class="headline__divider">
+                        <div class="page__divider">
                             <hr>
                         </div>
 
