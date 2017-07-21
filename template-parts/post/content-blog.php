@@ -31,7 +31,7 @@
         <?php the_title( '<h2>', '</h2>'); ?>
 
 		<div class="blog-post__meta">
-             <p>by <span class="text--color"><?php the_author(); ?></span><?php the_time(); ?></p>
+             <p>by <span class="text-color"><?php the_author(); ?></span><?php the_time(); ?></p>
               <span class="icon-baloon"></span>
               <p><?php comments_number(); ?></p>
 		</div><!-- .blog-post__meta -->
@@ -103,7 +103,7 @@
 	<div class="blog-post__btn-row">
 
 		<div class="blog-post__meta">
-             <p>by <span class="text--color"><?php the_author(); ?></span><?php the_time(); ?></p>
+             <p>by <span class="text-color"><?php the_author(); ?></span><?php the_time(); ?></p>
               <span class="icon-baloon"></span>
               <p><?php comments_number(); ?></p>
 		</div><!-- .blog-post__meta -->

@@ -6059,13 +6059,6 @@ button.close {
   .blog-post__btn-row a.btn, .portfolio-post__btn-row a.btn, .blog-post__btn-row .blog-post__categories a.category-style-change, .blog-post__categories .blog-post__btn-row a.category-style-change, .portfolio-post__btn-row .blog-post__categories a.category-style-change, .blog-post__categories .portfolio-post__btn-row a.category-style-change {
     float: right; } }
 
-/*=================================================
-
-         Image Overlay Style
-
-* to show over an image when hovered
-
-==================================================*/
 /*==============================
 
     TYPOGRAPHY STYLES
@@ -6157,7 +6150,7 @@ a:focus {
 .text-bold {
   font-weight: 600; }
 
-.text-color {
+.text-color, #page .comment-list .vcard b {
   color: #06D6A0; }
 
 .text-light {
@@ -6176,7 +6169,7 @@ a:focus {
 ================================*/
 body {
   position: relative;
-  padding-top: 100px;
+  padding-top: 130px;
   right: 0;
   transition: right 0.5s; }
   @media (max-width: 767px) {
@@ -6194,6 +6187,10 @@ body {
     width: 70px;
     position: absolute;
     top: -2px; }
+    @media (max-width: 767px) {
+      .page__divider hr {
+        left: 50%;
+        transform: translateX(-50%); } }
 
 .list-text-style--paragraph li {
   line-height: 1.8;
@@ -6207,9 +6204,6 @@ a:link {
   .container {
     width: 100%;
     max-width: 1410px; } }
-
-.text--color, #page .comment-list .vcard b {
-  color: #06D6A0; }
 
 .color-primary {
   color: #06D6A0; }
@@ -6423,7 +6417,40 @@ a:link {
   .btn-clear span {
     font-size: 13px;
     margin-left: 5px; }
-  .btn-clear .btn-default:active:hover, .btn-clear .blog-post__categories .category-style-change:active:hover, .blog-post__categories .btn-clear .category-style-change:active:hover, .btn-clear .blog-post__categories .category-style-change:active:hover, .btn-clear .btn-default:active:focus, .btn-clear .blog-post__categories .category-style-change:active:focus, .blog-post__categories .btn-clear .category-style-change:active:focus, .btn-clear .blog-post__categories .category-style-change:active:focus, .btn-clear .btn-default:active.focus, .btn-clear .blog-post__categories .category-style-change:active.focus, .blog-post__categories .btn-clear .category-style-change:active.focus, .btn-clear .blog-post__categories .category-style-change:active.focus, .btn-clear .btn-default.active:hover, .btn-clear .blog-post__categories .active.category-style-change:hover, .blog-post__categories .btn-clear .active.category-style-change:hover, .btn-clear .blog-post__categories .active.category-style-change:hover, .btn-clear .btn-default.active:focus, .btn-clear .blog-post__categories .active.category-style-change:focus, .blog-post__categories .btn-clear .active.category-style-change:focus, .btn-clear .blog-post__categories .active.category-style-change:focus, .btn-clear .btn-default.active.focus, .btn-clear .blog-post__categories .active.focus.category-style-change, .blog-post__categories .btn-clear .active.focus.category-style-change, .btn-clear .blog-post__categories .active.focus.category-style-change, .btn-clear .open > .btn-default.dropdown-toggle:hover, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:hover, .blog-post__categories .btn-clear .open > .dropdown-toggle.category-style-change:hover, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:hover, .btn-clear .open > .btn-default.dropdown-toggle:focus, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:focus, .blog-post__categories .btn-clear .open > .dropdown-toggle.category-style-change:focus, .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:focus, .btn-clear .open > .btn-default.dropdown-toggle.focus, .btn-clear .blog-post__categories .open > .dropdown-toggle.focus.category-style-change, .blog-post__categories .btn-clear .open > .dropdown-toggle.focus.category-style-change, .btn-clear .blog-post__categories .open > .dropdown-toggle.focus.category-style-change {
+  .btn-clear .btn-default:active:hover, .btn-clear .blog-post__categories .category-style-change:active:hover, .blog-post__categories .btn-clear .category-style-change:active:hover,
+  .btn-clear .blog-post__categories .category-style-change:active:hover,
+  .btn-clear .btn-default:active:focus,
+  .btn-clear .blog-post__categories .category-style-change:active:focus, .blog-post__categories
+  .btn-clear .category-style-change:active:focus,
+  .btn-clear .blog-post__categories .category-style-change:active:focus,
+  .btn-clear .btn-default:active.focus,
+  .btn-clear .blog-post__categories .category-style-change:active.focus, .blog-post__categories
+  .btn-clear .category-style-change:active.focus,
+  .btn-clear .blog-post__categories .category-style-change:active.focus,
+  .btn-clear .btn-default.active:hover,
+  .btn-clear .blog-post__categories .active.category-style-change:hover, .blog-post__categories
+  .btn-clear .active.category-style-change:hover,
+  .btn-clear .blog-post__categories .active.category-style-change:hover,
+  .btn-clear .btn-default.active:focus,
+  .btn-clear .blog-post__categories .active.category-style-change:focus, .blog-post__categories
+  .btn-clear .active.category-style-change:focus,
+  .btn-clear .blog-post__categories .active.category-style-change:focus,
+  .btn-clear .btn-default.active.focus,
+  .btn-clear .blog-post__categories .active.focus.category-style-change, .blog-post__categories
+  .btn-clear .active.focus.category-style-change,
+  .btn-clear .blog-post__categories .active.focus.category-style-change,
+  .btn-clear .open > .btn-default.dropdown-toggle:hover,
+  .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:hover, .blog-post__categories
+  .btn-clear .open > .dropdown-toggle.category-style-change:hover,
+  .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:hover,
+  .btn-clear .open > .btn-default.dropdown-toggle:focus,
+  .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:focus, .blog-post__categories
+  .btn-clear .open > .dropdown-toggle.category-style-change:focus,
+  .btn-clear .blog-post__categories .open > .dropdown-toggle.category-style-change:focus,
+  .btn-clear .open > .btn-default.dropdown-toggle.focus,
+  .btn-clear .blog-post__categories .open > .dropdown-toggle.focus.category-style-change, .blog-post__categories
+  .btn-clear .open > .dropdown-toggle.focus.category-style-change,
+  .btn-clear .blog-post__categories .open > .dropdown-toggle.focus.category-style-change {
     background: transparent;
     outline: transparent;
     border: none; }
@@ -6485,25 +6512,25 @@ a:link {
   .btn-custom-5:hover {
     background: #06D6A0; }
 
-.features-container {
+.blurb-container {
   margin: 60px 0;
   background: #f6f6f6; }
   @media (max-width: 767px) {
-    .features-container {
+    .blurb-container {
       margin-bottom: 0; } }
 
-.feature__content {
+.blurb__content {
   text-align: center;
   padding: 40px 20px 20px 20px;
   margin-bottom: 30px;
   background: #FFFFFF; }
   @media (min-width: 767px) {
-    .feature__content {
+    .blurb__content {
       padding: 20px; } }
-  .feature__content img {
+  .blurb__content img {
     max-width: 90px; }
     @media (min-width: 992px) {
-      .feature__content img {
+      .blurb__content img {
         max-width: 120px; } }
 
 .portfolio-item, .category-gallery__item {
@@ -6806,29 +6833,6 @@ a:link {
         visibility: hidden;
         background-color: none; } }
 
-.dropdown-menu-custom--1.display {
-  position: relative;
-  top: 0;
-  display: block;
-  float: none;
-  width: 200px; }
-  .dropdown-menu-custom--1.display li > a {
-    white-space: normal; }
-    @media (min-width: 767px) {
-      .dropdown-menu-custom--1.display li > a {
-        white-space: nowrap;
-        color: #FFFFFF;
-        letter-spacing: 0;
-        font-weight: bold;
-        margin: 0;
-        padding: 0;
-        transition: color 0.5s; }
-        .dropdown-menu-custom--1.display li > a:hover {
-          color: #06D6A0; }
-        .dropdown-menu-custom--1.display li > a:hover:before {
-          visibility: hidden;
-          background-color: none; } }
-
 .hero-img {
   background-repeat: no-repeat;
   background-size: cover;
@@ -6960,6 +6964,8 @@ a:link {
 
 /*
     This form is seen when using wordpress's get_search_form() tag.
+
+    * And the search field seen in wordpress's default search widget.
 */
 .search-form {
   position: relative; }
@@ -6996,23 +7002,17 @@ a:link {
       color: #ff1f79;
       border-bottom: 2px solid #ff1f79; }
 
+.webtag {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  background: #06D6A0;
+  border-radius: 20px; }
+
 @media (max-width: 767px) {
   .headline {
     text-align: center; } }
-
-.headline__divider {
-  position: relative;
-  border-top: 1px solid #f6f6f6; }
-  .headline__divider hr {
-    margin: 0;
-    border-top: 3px solid #222;
-    width: 70px;
-    position: absolute;
-    top: -2px; }
-    @media (max-width: 767px) {
-      .headline__divider hr {
-        left: 50%;
-        transform: translateX(-50%); } }
 
 /*
     # DEFAULT MASONRY LAYOUT
@@ -7087,6 +7087,10 @@ a:link {
     #header-menu.menu-open {
       right: 0; } }
 
+@media (min-width: 767px) {
+  footer .nav li {
+    float: right; } }
+
 .footer__copyright {
   color: #a2a2a2;
   margin: 0;
@@ -7099,10 +7103,6 @@ a:link {
 .footer__widget-area .widget_meta li {
   font-size: 16px;
   margin: 0; }
-
-@media (min-width: 767px) {
-  footer .nav li {
-    float: right; } }
 
 .page-content__wrapper {
   margin-bottom: 30px; }
@@ -7139,6 +7139,39 @@ a:link {
     .single-blog-post .nav li a:first-child {
       padding-left: 0; } }
 
+.port-gallery__item {
+  margin: 30px 0; }
+
+.port-gallery__item__text h4 {
+  margin: 30px 0; }
+
+.port-gallery__item__text p, .port-gallery__item__text #page .comment-list .vcard b, #page .comment-list .vcard .port-gallery__item__text b, .port-gallery__item__text
+#page .comment-list .vcard span,
+#page .comment-list .vcard .port-gallery__item__text span, .port-gallery__item__text #page .comment-list .comment-metadata, #page .comment-list .port-gallery__item__text .comment-metadata, .port-gallery__item__text .widget a, .widget .port-gallery__item__text a, .port-gallery__item__text .widget li, .widget .port-gallery__item__text li, .port-gallery__item__text .widget span, .widget .port-gallery__item__text span {
+  padding: 0;
+  margin: 30px 0; }
+
+/*
+    Portfolio Projects Post - TOP SLIDER
+*/
+.single-portflio-post__slider .carousel-control {
+  top: 50%;
+  background-image: none; }
+
+.single-portflio-post__content__figcaption {
+  margin: 30px 0; }
+  .single-portflio-post__content__figcaption h4 {
+    margin-bottom: 15px; }
+  .single-portflio-post__content__figcaption ul li {
+    margin-bottom: 5px;
+    color: #a2a2a2; }
+  .single-portflio-post__content__figcaption ul li span {
+    color: #222;
+    padding-right: 10px; }
+
+/*
+    Portfolio Projects Post - BOTTOM CONTENT
+*/
 .portfolio-post__thumbnail {
   position: relative; }
 
@@ -7176,33 +7209,6 @@ a:link {
 .portfolio-post__content span,
 .portfolio-post__meta {
   margin: 30px 0; }
-
-.port-gallery__item {
-  margin: 30px 0; }
-
-.port-gallery__item__text h4 {
-  margin: 30px 0; }
-
-.port-gallery__item__text p, .port-gallery__item__text #page .comment-list .vcard b, #page .comment-list .vcard .port-gallery__item__text b, .port-gallery__item__text
-#page .comment-list .vcard span,
-#page .comment-list .vcard .port-gallery__item__text span, .port-gallery__item__text #page .comment-list .comment-metadata, #page .comment-list .port-gallery__item__text .comment-metadata, .port-gallery__item__text .widget a, .widget .port-gallery__item__text a, .port-gallery__item__text .widget li, .widget .port-gallery__item__text li, .port-gallery__item__text .widget span, .widget .port-gallery__item__text span {
-  padding: 0;
-  margin: 30px 0; }
-
-.single-portflio-post__slider .carousel-control {
-  top: 50%;
-  background-image: none; }
-
-.single-portflio-post__content__figcaption {
-  margin: 30px 0; }
-  .single-portflio-post__content__figcaption h4 {
-    margin-bottom: 15px; }
-  .single-portflio-post__content__figcaption ul li {
-    margin-bottom: 5px;
-    color: #a2a2a2; }
-  .single-portflio-post__content__figcaption ul li span {
-    color: #222;
-    padding-right: 10px; }
 
 .widget-area .row {
   border: 4px dashed #a2a2a2;
@@ -7267,6 +7273,9 @@ a:link {
 .container--padding {
   padding: 30px 15px; }
 
+/*
+    HOME PAGE - a.k.a Front-page.php
+*/
 .portfolio-section .navbar-custom-1 {
   margin-bottom: 30px; }
   @media (max-width: 767px) {
@@ -7290,7 +7299,7 @@ a:link {
   .bio-excerpt-section img {
     padding: 0; } }
 
-.bio-excerpt-section .headline__divider {
+.bio-excerpt-section .page__divider {
   margin-bottom: 45px; }
 
 .bio-excerpt-section h6 {
@@ -7336,13 +7345,6 @@ a:link {
   border-top: 1px solid #f6f6f6; }
   #error-page .page-caption form {
     margin: 30px 0; }
-
-.typography-section {
-  margin-bottom: 60px; }
-
-.elements-section__buttons button,
-.elements-section__buttons span {
-  margin: 10px; }
 
 @media (max-width: 767px) {
   .post-type-archive-portfolio_post .page-header {

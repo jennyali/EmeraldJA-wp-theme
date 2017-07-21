@@ -1,3 +1,5 @@
+
+//# YOAST Plugin Breadcrumbs
 .breadcrumbs-section {
     background: $light-grey;
 }
@@ -24,12 +26,12 @@
 
         li.active {
             color: $primary-color;
-    }
+        }
 
-    strong {
-        color: $primary-color;
-        padding: 0 $spacing-xs;
-    }
+        strong {
+            color: $primary-color;
+            padding: 0 $spacing-xs;
+        }
 }
 
 .breadcrumb_last {

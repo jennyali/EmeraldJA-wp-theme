@@ -98,7 +98,7 @@ $port_image_four = get_field( 'port_image_four' );
                     <h4>Project Details</h4>
 
                     <div class="blog-post__meta">
-                        <p>Posted by <span class="text--color"><?php the_author(); ?></span> on <?php the_date(); ?></p>
+                        <p>Posted by <span class="text-color"><?php the_author(); ?></span> on <?php the_date(); ?></p>
                     </div><!-- .blog-post__meta -->
 
                     <ul class="list-unstyled">
@@ -107,7 +107,7 @@ $port_image_four = get_field( 'port_image_four' );
                             $postwebtags = get_the_terms( get_the_ID() , 'web_tags' );
                             if ($postwebtags) {
                                 foreach($postwebtags as $webtag) {
-                                    echo $webtag->name . ' '; 
+                                    echo '<div class="webtag">' . $webtag->name . '</div>'; 
                                 }
                             }
                         ?>

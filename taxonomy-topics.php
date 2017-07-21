@@ -30,9 +30,9 @@ get_header(); ?>
 						the_archive_description( '<div class="archive-description">', '</div>' );
 					?>
 
-                    <div class="headline__divider">
+                    <div class="page__divider">
                         <hr>
-                    </div><!-- .headline__divider -->
+                    </div><!-- .page__divider -->
 
 				</header><!-- .headline -->
             

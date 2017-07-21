@@ -80,35 +80,3 @@
                 }
         }
 }
-
-//       on display version on Elements page.       //
-.dropdown-menu-custom--1.display {
-    position: relative;
-    top: 0;
-    display: block;
-    float: none;
-    width: 200px;
-
-        & li > a {
-            white-space: normal; 
-
-                @include mediaQ-min($bp-sm) {
-                    white-space: nowrap;
-                    color: $light;
-                    letter-spacing: 0;
-                    font-weight: bold;
-                    margin: 0;
-                    padding: 0;
-                    transition: color 0.5s;
-
-                        &:hover {
-                            color: $primary-color;
-                        }
-
-                        &:hover:before {
-                            visibility: hidden;
-                            background-color: none;
-                        }
-                }
-        }
-}

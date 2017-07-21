@@ -19,7 +19,6 @@
   padding: $spacing-base;
 }
 .masonry-layout__panel-content {
-  //padding: 10px;
   border-radius: 0;
 
       @include mediaQ-max($bp-xs) {

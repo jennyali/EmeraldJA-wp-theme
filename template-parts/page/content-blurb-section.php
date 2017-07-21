@@ -19,14 +19,14 @@ $blurb_section_lead_text = get_field( 'blurb_section_lead_text' );
 
                     <p><?php echo $blurb_section_lead_text; ?></p>
 
-                    <div class="headline__divider">
+                    <div class="page__divider">
                         <hr>
-                    </div><!-- .headline__divider -->
+                    </div><!-- .page__divider -->
 
                 </div><!-- .headline -->
             </div><!-- .row -->
 
-            <div class="row features-container">
+            <div class="row blurb-container">
 
                     <?php //+++     QUERY FOR DISPLAY BLURB POSTS   +++//
 

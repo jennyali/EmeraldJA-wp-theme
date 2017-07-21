@@ -1,4 +1,16 @@
 
+footer {
+
+    .nav {
+
+        li {
+
+            @include mediaQ-min($bp-sm) {
+                float: right;
+            }
+        }
+    }
+}
 
 .footer__copyright {
     color: $mid-grey;
@@ -8,7 +20,6 @@
 }
 
 .footer__widget-area {
-    //padding: $spacing-base;
 
     .widget_meta {
 
@@ -20,18 +31,5 @@
                 font-size: $font-size-base;
                 margin: 0;
             }
-    }
-}
-
-footer {
-
-    .nav {
-
-        li {
-
-            @include mediaQ-min($bp-sm) {
-                float: right;
-            }
-        }
     }
 }

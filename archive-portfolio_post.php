@@ -19,7 +19,7 @@ get_header(); ?>
 			if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1>All: <span class="text--color">Projects</span></h1>
+					<h1>All: <span class="text-color">Projects</span></h1>
 					<?php
 						//the_archive_title( '<h2 class="page-title">', '</h2>' );
 						//the_archive_description( '<div class="archive-description">', '</div>' );

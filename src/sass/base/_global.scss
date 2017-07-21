@@ -24,7 +24,6 @@ h2 {
     line-height: 1.5;
     margin: $spacing-base 0 ($spacing-base * 2) 0;
     font-size: 52px;
-    //color: $primary-dark-color;
 
         @include mediaQ-max($bp-sm) {
             font-size: $font-size-xxlg;
@@ -138,7 +137,7 @@ a:focus {
 //# Body takes into account the height of the header / Also moves on sm-screen with menu open.
 body {
     position: relative;
-    padding-top: 100px;
+    padding-top: 130px;
     right: 0;
     transition: right 0.5s;
 
@@ -152,21 +151,25 @@ body {
 }
 
 
+//# A Divding line seen under large headings.
 .page__divider {
     position: relative;
     border-top: 1px solid $light-grey;
     margin: $spacing-base * 2 0;
 
+        hr {
+            margin: 0;
+            border-top: 3px solid $dark;
+            width: 70px;
+            position: absolute;
+            top: -2px;
 
-    hr {
-        margin: 0;
-        border-top: 3px solid $dark;
-        width: 70px;
-        position: absolute;
-        top: -2px;
-    }
+                @include mediaQ-max($bp-sm) {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+        }
 }
-
 
 
 
@@ -189,10 +192,7 @@ a:link {
     }
 }
 
-.text--color {
-    color: $primary-color;
-}
-
+//# Primary color
 .color-primary {
     color: $primary-color;
 }

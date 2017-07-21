@@ -343,9 +343,6 @@ function get_current_template( $echo = false ) {
 
 //----------- AJAX CALLS -------------------//
 
-add_action( 'wp_ajax_ajax_portfolio_section', 'ajax_portfolio_section');
-
-
 function ajax_portfolio_section() {
 
 	$category_name = $_POST[ 'category_name' ];
@@ -411,6 +408,10 @@ function ajax_portfolio_section() {
 
 	}
 }
+
+add_action( 'wp_ajax_ajax_portfolio_section', 'ajax_portfolio_section');
+add_action( 'wp_ajax_nopriv_ajax_portfolio_section', 'ajax_portfolio_section');
+
 
 //----------------- Register new TAXONOMIES ------------------------//
 
