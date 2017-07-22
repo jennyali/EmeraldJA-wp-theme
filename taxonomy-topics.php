@@ -48,7 +48,7 @@ get_header(); ?>
 
                     $args = array(
                         'post_type' => 'portfolio_post',
-                        'order'     => 'ASC',
+                        'order'     => 'DESC',
                         'tax_query' => array(
                                 array(
                                     'taxonomy' => 'topics',

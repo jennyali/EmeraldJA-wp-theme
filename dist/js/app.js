@@ -10649,6 +10649,7 @@ $portfolioSectionLinks.on({
             type: 'post',
             data: {
                 action: 'ajax_portfolio_section',
+                query_vars: ajaxportfolio.query_vars,
                 category_name: $category_name
             },
             success: function success(result) {
