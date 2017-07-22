@@ -7128,7 +7128,8 @@ a:link {
 .single-blog-post {
   border-bottom: 1px solid #f6f6f6; }
   .single-blog-post a.btn, .single-blog-post .blog-post__categories a.category-style-change, .blog-post__categories .single-blog-post a.category-style-change {
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    margin-right: 5px; }
   .single-blog-post p, .single-blog-post #page .comment-list .vcard b, #page .comment-list .vcard .single-blog-post b, .single-blog-post
   #page .comment-list .vcard span,
   #page .comment-list .vcard .single-blog-post span, .single-blog-post #page .comment-list .comment-metadata, #page .comment-list .single-blog-post .comment-metadata, .single-blog-post .widget a, .widget .single-blog-post a, .single-blog-post .widget li, .widget .single-blog-post li, .single-blog-post .widget span, .widget .single-blog-post span {

@@ -91,11 +91,11 @@ if ( post_password_required() ) {
 
 			'author' =>
 				'<div class="comment-form-author form-group">' .
-				'<input class="form-control" id="author" name="author" type="text" placeholder="Name:" size="30"' . $aria_req . ' /></div>',
+				'<input class="form-control" id="author" name="author" type="text" placeholder="Name:" size="30" /></div>',
 
 			'email' =>
 				'<div class="comment-form-email form-group">' .
-				'<input class="form-control" id="email" name="email" type="text" placeholder="Email:" size="30"' . $aria_req . ' /></div>',
+				'<input class="form-control" id="email" name="email" type="text" placeholder="Email:" size="30" /></div>',
 
 		);
 

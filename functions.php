@@ -169,7 +169,6 @@ function emerald_ja_scripts() {
 
 	wp_localize_script( 'app', 'ajaxportfolio', array( 
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		'query_vars' => json_encode( $wp_query->query ) 
 	));
 
 }
@@ -266,7 +265,6 @@ function mytheme_comment($comment, $args, $depth) {
 				$myclass = 'icon-reply-mail-2';
 				echo preg_replace( '/comment-reply-link/', 'comment-reply-link ' . $myclass, 
 					get_comment_reply_link(array_merge( $args, array(
-						'add_below' => $add_below, 
 						'depth' => $depth,
 						'reply_text' => ' ', 
 						'max_depth' => $args['max_depth']))), 1 ); 
