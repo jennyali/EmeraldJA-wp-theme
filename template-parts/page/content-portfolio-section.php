@@ -55,7 +55,7 @@ $portfolio_section_text = get_field( 'portfolio_section_text' );
                         $args = array(
                             'post_type' => 'portfolio_post',
                             'orderby'   => 'post_id',
-                            'order'     => 'ASC',
+                            'order'     => 'DESC',
                             'posts_per_page' => 6,
                             'paged'          => $paged,
                         );

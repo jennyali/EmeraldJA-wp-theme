@@ -39,7 +39,7 @@ $blurb_section_lead_text = get_field( 'blurb_section_lead_text' );
                     $args = array(
                         'post_type' => 'blurb_post',
                         'orderby'   => 'post_id',
-                        'order'     => 'ASC',
+                        'order'     => 'DESC',
                         'posts_per_page' => '3',
                     );
 

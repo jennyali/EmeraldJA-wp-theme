@@ -6746,7 +6746,7 @@ a:link {
   position: relative; }
 
 .single-portflio-post__slider-main .slick-slide {
-  opacity: 0.8;
+  opacity: 0.6;
   transition: opacity 0.5s 0.5s;
   height: auto; }
 
