@@ -6335,24 +6335,37 @@ a:link {
         CAROUSELS
 
 ----------------------------*/
+@media (min-width: 767px) {
+  .carousel .carousel-inner {
+    height: 800px; } }
+
 .carousel .carousel-inner > .item {
   position: absolute;
   display: block;
   top: 0;
   z-index: 3; }
 
+.carousel .carousel-inner > .item > img {
+  max-width: none; }
+
 .carousel .item {
-  width: 100%; }
+  width: 100%;
+  max-height: 800px; }
+  @media (min-width: 767px) {
+    .carousel .item {
+      bottom: 60px; } }
   .carousel .item img {
-    width: 100%; }
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1500px; }
     @media (max-width: 767px) {
       .carousel .item img {
         position: relative;
         left: 50%;
         transform: translate(-50%);
-        max-width: none;
-        width: initial;
-        height: 82vh; } }
+        height: auto;
+        width: 150%; } }
   .carousel .item .item__caption__inner {
     position: absolute;
     top: 70%;
@@ -6361,7 +6374,6 @@ a:link {
     @media (max-width: 767px) {
       .carousel .item .item__caption__inner {
         width: 100%;
-        text-align: center;
         padding: 15px 0; } }
 
 .carousel .item.active.first-load {
@@ -7068,21 +7080,26 @@ a:link {
   z-index: 50;
   width: 100%; }
 
-.site-header.navbar-custom-1.affix {
-  background: rgba(255, 255, 255, 0.9); }
-  .site-header.navbar-custom-1.affix .navbar {
-    padding: 10px 0; }
-  .site-header.navbar-custom-1.affix .navbar-nav {
-    margin-top: 0; }
-  .site-header.navbar-custom-1.affix .navbar-brand {
-    font-size: 24px; }
-  .site-header.navbar-custom-1.affix .navbar-brand--thick-text {
-    font-size: 32px; }
-  .site-header.navbar-custom-1.affix .navbar,
-  .site-header.navbar-custom-1.affix .navbar-nav,
-  .site-header.navbar-custom-1.affix .navbar-brand,
-  .site-header.navbar-custom-1.affix .navbar-brand--thick-text {
-    transition: all 0.5s; }
+.site-header.navbar-custom-1.affix .navbar {
+  padding: 10px 0;
+  transform: rotate(0deg);
+  top: 0px;
+  width: 100%; }
+
+.site-header.navbar-custom-1.affix .navbar-nav {
+  margin-top: 0; }
+
+.site-header.navbar-custom-1.affix .navbar-brand {
+  font-size: 24px; }
+
+.site-header.navbar-custom-1.affix .navbar-brand--thick-text {
+  font-size: 32px; }
+
+.site-header.navbar-custom-1.affix .navbar,
+.site-header.navbar-custom-1.affix .navbar-nav,
+.site-header.navbar-custom-1.affix .navbar-brand,
+.site-header.navbar-custom-1.affix .navbar-brand--thick-text {
+  transition: all 0.5s; }
 
 @media (max-width: 767px) {
   #header-menu {

@@ -20,7 +20,7 @@ $hero_slider_button_link        = get_field( 'hero_slider_button_link' );
 
         <div class="row item__caption__inner">
 
-            <div class="col-sm-12 text-light">
+            <div class="col-sm-12">
                 <h5><?php echo $hero_slider_top_sub_title; ?></h5>
                 <h1><?php echo $hero_slider_title; ?></h1>
                 <a href="<?php echo $hero_slider_button_link; ?>"><button class="btn btn-default btn-lg btn-custom-1"><?php echo $hero_slider_button_title; ?></button></a>

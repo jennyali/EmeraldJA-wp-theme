@@ -3,14 +3,19 @@
     top: 0;
     z-index: 50;
     width: 100%;
+
 }
 
 //# When header is out of view, affix a smaller version at the top of screen.
 .site-header.navbar-custom-1.affix {
-    background: rgba($light, 0.9);
+    //background: rgba($light, 0.9);
 
     .navbar {
         padding: $spacing-sm 0;
+
+        transform: rotate(0deg);
+        top: 0px;
+        width: 100%;
     }
 
     .navbar-nav {
@@ -32,6 +37,7 @@
         transition: all 0.5s;
     }
 }
+
 
 //# Small screen navbar change to off right side of screen.
 #header-menu {
