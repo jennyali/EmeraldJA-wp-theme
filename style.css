@@ -5956,17 +5956,22 @@ button.close {
   padding-top: 0;
   opacity: 1; }
 
-#home-bio-excerpt img {
-  position: relative;
-  right: 60px;
-  opacity: 0;
-  transition: all 0.5s 0.25s ease-in-out; }
+/*#home-bio-excerpt {
+    img {
+        position: relative;
+        right: 60px;
+        opacity: 0;
+        transition: all 0.5s 0.25s ease-in-out;
+    }
+}
 
-#home-bio-excerpt.in-view img {
-  position: relative;
-  right: 0px;
-  opacity: 1; }
-
+#home-bio-excerpt.in-view {
+    img {
+        position: relative;
+        right: 0px;
+        opacity: 1;
+    }
+}*/
 .masonry-layout__panel {
   opacity: 0;
   animation-name: fadeInItem;
