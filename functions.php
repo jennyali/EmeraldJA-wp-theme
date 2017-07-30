@@ -46,6 +46,7 @@ function emerald_ja_setup() {
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'emerald_ja' ),
 		'header-menu' => esc_html__( 'Header Menu', 'emerald_ja' ),
+		'alt-head-nav' => esc_html__( 'Alt Header Menu', 'emerald_ja' ),
 		'portfolio-section-menu' => esc_html__( 'Portfolio Section Menu', 'emerald_ja' ),
 	) );
 
@@ -213,6 +214,19 @@ function header_nav() {
             'depth'             => 2,
             'container'         => 'false',
             'menu_class'        => 'nav navbar-nav navbar-right navbar-links--underline',
+            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+            'walker'            => new wp_bootstrap_navwalker())
+    );
+};
+
+// Header Center style navigation
+function alt_head_nav() {
+
+	wp_nav_menu( array(
+            'theme_location'    => 'alt-head-nav',
+            'depth'             => 2,
+            'container'         => 'false',
+            'menu_class'        => 'nav navbar-nav navbar-links--underline',
             'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
             'walker'            => new wp_bootstrap_navwalker())
     );
