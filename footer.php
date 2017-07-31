@@ -18,24 +18,21 @@
 
      <nav id="footer-navbar" class="navbar navbar-inverse navbar-custom-2">
 
-        <div class="container">
+        <div class="container-fluid">
+
+            <div class="row footer__widget-area">
+
+                <div class="col-sm-9 col-sm-offset-3 footer__widget-area__container">
+                
+                    <?php dynamic_sidebar( 'sidebar-footer' ); ?>
+                
+                </div><!-- .footer__widget-area__container -->
+
+            </div><!-- .footer__widget-area -->
 
             <div class="row">
 
-                <ul class="nav navbar-nav col-sm-4 col-sm-push-8">
-                    <li><a href="#"><span class="icon-facebook"></span></a></li>
-                    <li><a href="#"><span class="icon-google-plus"></span></a></li>
-                    <li><a href="#"><span class="icon-share-alt"></span></a></li>
-                </ul><!-- .navbar-right -->
-
-                <div class="col-sm-4 footer__widget-area">
-
-                    <?php dynamic_sidebar( 'sidebar-footer' ); ?>
-
-                </div><!-- .footer__widget-area -->
-
-                <p class="footer__copyright col-sm-4 col-sm-pull-8"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?> <?php the_author(); ?></p>
-
+                <p class="footer__copyright col-sm-12"><?php bloginfo('name'); ?> &copy; <?php echo date('Y'); ?> <?php the_author(); ?></p>
 
             </div><!-- .row -->
 
