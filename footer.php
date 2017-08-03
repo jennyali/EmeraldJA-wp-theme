@@ -22,7 +22,7 @@
 
             <div class="row footer__widget-area">
 
-                <div class="col-sm-9 col-sm-offset-3 footer__widget-area__container">
+                <div class="col-lg-9 col-lg-offset-3 footer__widget-area__container">
                 
                     <?php dynamic_sidebar( 'sidebar-footer' ); ?>
                 
