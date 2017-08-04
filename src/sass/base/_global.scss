@@ -142,6 +142,7 @@ body {
     transition: right 0.5s;
 
         @include mediaQ-max($bp-sm) {
+            padding-top: 80px;
 
             &.header-menu-open {
                 right: $vertical-navbar-width;
