@@ -51,13 +51,14 @@
         width: $vertical-navbar-width;
         transition: right 0.5s;
         margin: 0;
+        height: 100vh;
 
         .navbar-nav > li > a {
             color: $light;
         }
 
         &.menu-open {
-            right: 0;
+            //right: 0;
         }
     }
 }

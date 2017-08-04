@@ -3,7 +3,7 @@
 */
 
 .masonry-layout {
-  column-count: 1;
+  column-count: 2;
   column-gap: 0;
 
     @include mediaQ-min($bp-xs) {
@@ -16,7 +16,11 @@
 }
 .masonry-layout__panel {
   break-inside: avoid;
-  padding: $spacing-base;
+  padding: 5px;
+
+  @include mediaQ-min($bp-sm) {
+    padding: $spacing-base;
+  }
 }
 .masonry-layout__panel-content {
   border-radius: 0;
