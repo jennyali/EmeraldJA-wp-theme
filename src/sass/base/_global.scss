@@ -141,7 +141,7 @@ body {
     right: 0;
     transition: right 0.5s;
 
-        @include mediaQ-max($bp-sm) {
+        @include mediaQ-max($bp-md) {
             padding-top: 80px;
 
             &.header-menu-open {
