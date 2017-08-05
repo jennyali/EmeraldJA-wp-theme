@@ -13,7 +13,7 @@
     .navbar {
         padding: $spacing-sm 0;
 
-        transform: rotate(0deg);
+        //transform: rotate(0deg);
         top: 0px;
         width: 100%;
     }
@@ -44,7 +44,7 @@
 
     @include mediaQ-max($bp-sm) {
         position: fixed;
-        background: $primary-color;
+        background: $dark;
         top: 0;
         bottom: 0;
         right: -$vertical-navbar-width;
@@ -52,6 +52,7 @@
         transition: right 0.5s;
         margin: 0;
         height: 100vh;
+        //right: 0;
 
         .navbar-nav > li > a {
             color: $light;

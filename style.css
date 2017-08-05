@@ -6191,7 +6191,7 @@ body {
   padding-top: 130px;
   right: 0;
   transition: right 0.5s; }
-  @media (max-width: 767px) {
+  @media (max-width: 992px) {
     body {
       padding-top: 80px; }
       body.header-menu-open {
@@ -6239,7 +6239,7 @@ a:link {
     padding: 10px 0;
     margin: 0;
     border-radius: 0; }
-    @media (min-width: 767px) {
+    @media (min-width: 992px) {
       .navbar-custom-1 .navbar {
         padding: 30px 0; } }
   .navbar-custom-1 .navbar-default {
@@ -6254,7 +6254,6 @@ a:link {
     font-size: 45px;
     color: #ed145b; }
   .navbar-custom-1 .navbar-nav {
-    margin-top: 10px;
     padding: 15px 0; }
     .navbar-custom-1 .navbar-nav a {
       letter-spacing: 2px;
@@ -7097,7 +7096,6 @@ a:link {
 
 .site-header.navbar-custom-1.affix .navbar {
   padding: 10px 0;
-  transform: rotate(0deg);
   top: 0px;
   width: 100%; }
 
@@ -7119,7 +7117,7 @@ a:link {
 @media (max-width: 767px) {
   #header-menu {
     position: fixed;
-    background: #ed145b;
+    background: #222;
     top: 0;
     bottom: 0;
     right: -240px;
@@ -7315,7 +7313,7 @@ a:link {
   margin: 30px 0; }
 
 .container--padding {
-  padding: 30px 15px; }
+  padding: 30px 15px 100px; }
 
 /*
     HOME PAGE - a.k.a Front-page.php
@@ -7368,12 +7366,8 @@ a:link {
 .category-gallery {
   margin: 30px 0; }
 
-.category-gallery__item {
-  margin: 30px 15px; }
-
-@media (min-width: 767px) {
-  .single-portflio-post__title {
-    padding: 60px 15px 0; } }
+.single-portflio-post__title {
+  padding: 60px 15px 0; }
 
 .single-portflio-post__content {
   margin: 30px 0; }
